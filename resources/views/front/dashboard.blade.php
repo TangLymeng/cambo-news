@@ -14,7 +14,7 @@
 
                             <figure class="authorPage-image">
                                 <img alt=""
-                                     src="{{ empty($userData->google_id) ? asset('uploads/'.$userData->photo) : $userData->photo }}"
+                                     src="{{ empty($userData->provider_id) ? asset('uploads/'.$userData->photo) : $userData->photo }}"
                                      class="avatar avatar-96 photo" height="96" width="96" loading="lazy"></figure>
                             <h1 class="authorPage-name">
                                 <a href=" "> {{ $userData->name }} </a>

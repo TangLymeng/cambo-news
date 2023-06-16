@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\API\FacebookAuthController;
+use App\Http\Controllers\API\GithubAuthController;
 use App\Http\Controllers\API\GoogleAuthController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Auth\ConfirmablePasswordController;
@@ -48,6 +50,22 @@ Route::get('/login-google', [GoogleAuthController::class, 'redirectToProvider'])
 Route::get('/auth/google/callback', [GoogleAuthController::class, 'handleCallback'])
     ->middleware('guest')
     ->name('google.login.callback');
+
+Route::get('/login-facebook', [FacebookAuthController::class, 'redirectToProvider'])
+    ->middleware('guest')
+    ->name('facebook.login');
+
+Route::get('/auth/facebook/callback', [FacebookAuthController::class, 'handleCallback'])
+    ->middleware('guest')
+    ->name('facebook.login.callback');
+
+Route::get('/login-github', [GithubAuthController::class, 'redirectToProvider'])
+    ->middleware('guest')
+    ->name('github.login');
+
+Route::get('/auth/github/callback', [GithubAuthController::class, 'handleCallback'])
+    ->middleware('guest')
+    ->name('github.login.callback');
 
 Route::get('/verify-email', [EmailVerificationPromptController::class, '__invoke'])
     ->middleware('auth')

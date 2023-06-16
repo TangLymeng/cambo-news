@@ -59,6 +59,22 @@
                     {{ __('Login with Google') }}
                 </a>
             </div>
+
+            <div class="mt-4 flex w-full justify-center items-center rounded-md bg-gray-100 hover:bg-gray-50">
+                <img src="{{ asset('uploads/Facebook-logo.png') }}" alt="" style="width: 50px">
+
+                <a href="{{ route('facebook.login') }}" class="ml-2 text-gray-700 font-semibold">
+                    {{ __('Login with Facebook') }}
+                </a>
+            </div>
+
+            <div class="mt-4 flex w-full justify-center items-center rounded-md bg-gray-100 hover:bg-gray-50">
+                <img src="{{ asset('uploads/GitHub-Mark.png') }}" alt="" style="width: 50px">
+
+                <a href="{{ route('github.login') }}" class="ml-2 text-gray-700 font-semibold">
+                    {{ __('Login with Github') }}
+                </a>
+            </div>
         </form>
     </x-auth-card>
 </x-guest-layout>

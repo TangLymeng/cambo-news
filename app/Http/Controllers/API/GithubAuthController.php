@@ -8,34 +8,34 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Laravel\Socialite\Facades\Socialite;
 
-class GoogleAuthController extends Controller
+class GithubAuthController extends Controller
 {
     /**
-     * Redirect the user to the Google authentication page.
+     * Redirect the user to the Github authentication page.
      *
-      * @return \Illuminate\Http\RedirectResponse|\Symfony\Component\HttpFoundation\RedirectResponse
+     * @return \Illuminate\Http\RedirectResponse|\Symfony\Component\HttpFoundation\RedirectResponse
      */
     public function redirectToProvider()
     {
-        return Socialite::driver('google')->redirect();
+        return Socialite::driver('github')->redirect();
     }
     /**
-     * Obtain the user information from Google.
+     * Obtain the user information from Github.
      *
-      * @return \Illuminate\Http\RedirectResponse
+     * @return \Illuminate\Http\RedirectResponse
      */
 
     public function handleCallback()
     {
         try {
-            $user = Socialite::driver('google')->user();
+            $user = Socialite::driver('github')->user();
         }  catch (\Exception $e) {
             return redirect('/login');
         }
 
         // check if they're an existing user
 //        $existingUser = User::where('email', $user->email)->first();
-            $existingUser = User::where('provider_id', $user->id)->first();
+        $existingUser = User::where('provider_id', $user->id)->first();
 
         if($existingUser) {
             Auth::login($existingUser, true);
