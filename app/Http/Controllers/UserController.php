@@ -50,7 +50,7 @@ class UserController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect('/login')->with("status", "User Logout Successfully");
+        return redirect('/')->with("success", "User Logout Successfully");
 
     } // End Method
 

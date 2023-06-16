@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\API\GoogleAuthController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Auth\ConfirmablePasswordController;
 use App\Http\Controllers\Auth\EmailVerificationNotificationController;
@@ -39,6 +40,14 @@ Route::get('/reset-password/{token}', [NewPasswordController::class, 'create'])
 Route::post('/reset-password', [NewPasswordController::class, 'store'])
     ->middleware('guest')
     ->name('password.update');
+
+Route::get('/login-google', [GoogleAuthController::class, 'redirectToProvider'])
+    ->middleware('guest')
+    ->name('google.login');
+
+Route::get('/auth/google/callback', [GoogleAuthController::class, 'handleCallback'])
+    ->middleware('guest')
+    ->name('google.login.callback');
 
 Route::get('/verify-email', [EmailVerificationPromptController::class, '__invoke'])
     ->middleware('auth')

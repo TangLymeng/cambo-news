@@ -31,25 +31,6 @@
         </div>
     </div>
 
-{{--    <div class="widget">--}}
-{{--        <div class="archive-heading">--}}
-{{--            <h2>Archive</h2>--}}
-{{--        </div>--}}
-{{--        <div class="archive">--}}
-{{--            <select name="" class="form-select">--}}
-{{--                <option value="">Select Month</option>--}}
-{{--                <option value="">February 2022</option>--}}
-{{--                <option value="">January 2022</option>--}}
-{{--                <option value="">December 2021</option>--}}
-{{--                <option value="">November 2021</option>--}}
-{{--                <option value="">October 2021</option>--}}
-{{--                <option value="">September 2021</option>--}}
-{{--                <option value="">August 2021</option>--}}
-{{--                <option value="">July 2021</option>--}}
-{{--            </select>--}}
-{{--        </div>--}}
-{{--    </div>--}}
-
     <div class="widget">
         <div class="live-channel">
             <div class="live-channel-heading">
@@ -165,36 +146,5 @@
         @endforeach
 
     </div>
-
-{{--    <div class="widget">--}}
-{{--        <div class="poll-heading">--}}
-{{--            <h2>Online Poll</h2>--}}
-{{--        </div>--}}
-{{--        <div class="poll">--}}
-{{--            <div class="question">--}}
-{{--                Do you think that Apple products will be able to survive in the next 20 years?--}}
-{{--            </div>--}}
-{{--            <div class="answer-option">--}}
-{{--                <form action="" method="post">--}}
-{{--                    <div class="form-check">--}}
-{{--                        <input class="form-check-input" type="radio" name="poll" id="poll_id_1">--}}
-{{--                        <label class="form-check-label" for="poll_id_1">Yes</label>--}}
-{{--                    </div>--}}
-{{--                    <div class="form-check">--}}
-{{--                        <input class="form-check-input" type="radio" name="poll" id="poll_id_2">--}}
-{{--                        <label class="form-check-label" for="poll_id_2">No</label>--}}
-{{--                    </div>--}}
-{{--                    <div class="form-check">--}}
-{{--                        <input class="form-check-input" type="radio" name="poll" id="poll_id_3">--}}
-{{--                        <label class="form-check-label" for="poll_id_3">No Comment</label>--}}
-{{--                    </div>--}}
-{{--                    <div class="form-group">--}}
-{{--                        <button type="submit" class="btn btn-primary">Submit</button>--}}
-{{--                        <a href="poll-result.html" class="btn btn-primary old">Old Result</a>--}}
-{{--                    </div>--}}
-{{--                </form>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-{{--    </div>--}}
 
 </div>

@@ -68,18 +68,16 @@
 
                     @foreach($review as $item)
 
-                        @if($item->status == 0)
-
-                        @else
-
-
+                        @if($item->status == 1)
                             <div class="author2">
                                 <div class="author-content2">
                                     <h6 class="author-caption2">
                                         <span> COMMENTS </span>
                                     </h6>
                                     <div class="author-image2">
-                                        <img alt="" src="{{ (!empty($item->ruser->photo)) ? asset('uploads/'.$item->ruser->photo): asset('uploads/no_profile.jpg') }}"   class="avatar avatar-96 photo" height="96" width="96" loading="lazy"> </div>
+                                        <img alt=""
+                                             src="{{ (!empty($item->ruser->photo)) ? asset('uploads/'.$item->ruser->photo): asset('uploads/no_profile.jpg') }}"
+                                             class="avatar avatar-96 photo" height="96" width="96" loading="lazy"></div>
                                     <div class="authorContent">
                                         <h1 class="author-name2">
                                             <a href=""> {{ $item->ruser->name }} </a>
@@ -87,7 +85,6 @@
                                         <p> {{ Carbon\Carbon::parse($item->created_at)->diffForHumans() }} </p>
                                         <div class="author-details">{{ $item->comment }}</div>
                                     </div>
-
                                 </div>
                             </div>
                         @endif
