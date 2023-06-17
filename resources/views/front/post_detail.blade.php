@@ -10,7 +10,7 @@
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
                             <li class="breadcrumb-item"><a
-                                    href="{{ route('category',$post_detail->sub_category_id) }}">{{ $post_detail->rSubCategory->sub_category_name }}</a>
+                                    href="{{ route('category', $post_detail->sub_category_id) }}">{{ $post_detail->rSubCategory->sub_category_name }}</a>
                             </li>
                             <li class="breadcrumb-item active" aria-current="page">{{ $post_detail->post_title }}</li>
                         </ol>
@@ -47,6 +47,20 @@
                         <div class="item">
                             <b><i class="fas fa-eye"></i></b>
                             {{ $post_detail->visitors }}
+                        </div>
+                        <div class="item">
+                            @if (Auth::check())
+                                <div class="breadcrumb-save">
+                                    <form action="{{ route('posts.save', $post_detail->id) }}" method="POST">
+                                        @csrf
+                                        <button type="submit"
+                                                style="  background: none; border: none; color: inherit; cursor: pointer; padding: 0; text-decoration: underline;">
+                                                <i class="fas fa-bookmark"></i>
+                                            Save
+                                        </button>
+                                    </form>
+                                </div>
+                            @endif
                         </div>
                     </div>
                     <div class="main-text">

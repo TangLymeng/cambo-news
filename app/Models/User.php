@@ -44,4 +44,11 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function rSavedPosts()
+    {
+        return $this->belongsToMany(Post::class, 'user_post_saves', 'user_id', 'post_id')
+            ->withTimestamps();
+    }
+
 }

@@ -9,6 +9,7 @@ use App\Http\Controllers\Front\AboutController;
 use App\Http\Controllers\Front\CommentController;
 use App\Http\Controllers\Front\HomeController;
 use App\Http\Controllers\Front\PostController;
+use App\Http\Controllers\Front\SavePostController;
 use App\Http\Controllers\Front\SubCategoryController;
 use App\Http\Controllers\Front\TagController;
 use App\Http\Controllers\UserController;
@@ -32,6 +33,10 @@ Route::middleware(['auth'])->group(function() {
     Route::get('/dashboard', [UserController::class, 'UserDashboard'])->name('dashboard');
     Route::post('/user/profile/store', [UserController::class, 'UserProfileStore'])->name('user.profile.store');
     Route::get('/user/logout', [UserController::class, 'UserLogout'])->name('user.logout');
+    Route::post('/posts/{post}/save', [SavePostController::class, 'save'])->name('posts.save');
+    Route::get('/posts/saved', [SavePostController::class, 'savedPosts'])->name('posts.saved');
+    Route::delete('/posts/{post}', [SavePostController::class, 'deleteSavedPost'])->name('delete_saved_post');
+
 
 }); // End User Middleware
 

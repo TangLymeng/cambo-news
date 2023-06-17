@@ -13,4 +13,11 @@ class Post extends Model
     {
         return $this->belongsTo(SubCategory::class, 'sub_category_id');
     }
+
+    public function rSavedByUsers()
+    {
+        return $this->belongsToMany(User::class, 'user_post_saves', 'post_id', 'user_id')
+            ->withTimestamps();
+    }
+
 }

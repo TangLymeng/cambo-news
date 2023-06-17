@@ -25,8 +25,7 @@
 
 
                             <ul>
-                                <li><a href=""> <b>🔵 Change Password </b> </a></li>
-                                <li><a href=""> <b>🟠 Read Later List </b> </a></li>
+                                <li><a href="{{ route('posts.saved') }}"> <b>🟠 Read Later List </b> </a></li>
                                 <li> <a href="{{ route('user.logout') }}"> <b>🟠 Logout </b> </a> </li>
                             </ul>
 

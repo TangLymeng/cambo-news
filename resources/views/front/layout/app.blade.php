@@ -165,4 +165,13 @@
     </script>
 @endif
 
+@if(session()->get('info'))
+    <script>
+        iziToast.info({
+            title: '',
+            position: 'topRight',
+            message: '{{ session()->get('info') }}',
+        });
+    </script>
+@endif
 </html>
