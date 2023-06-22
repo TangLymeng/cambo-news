@@ -28,7 +28,7 @@ use App\Http\Controllers\Admin\AdminAdvertisementController;
 |
 */
 
-Route::middleware(['auth'])->group(function() {
+Route::middleware(['auth', 'verify.mobile'])->group(function() {
 
     Route::get('/dashboard', [UserController::class, 'UserDashboard'])->name('dashboard');
     Route::post('/user/profile/store', [UserController::class, 'UserProfileStore'])->name('user.profile.store');

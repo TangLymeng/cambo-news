@@ -2,15 +2,17 @@
 
 namespace App\Models;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Traits\MustVerifyMobile;
+use App\Interfaces\MustVerifyMobile as IMustVerifyMobile;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
-class User extends Authenticatable
+class User extends Authenticatable implements IMustVerifyMobile
 {
     use HasApiTokens, HasFactory, Notifiable;
+    use MustVerifyMobile;
 
     /**
      * The attributes that are mass assignable.
@@ -20,7 +22,11 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
-        'phone',
+        'mobile_number',
+        'mobile_verify_code',
+        'mobile_attempts_left',
+        'mobile_last_attempt_date',
+        'mobile_verify_code_sent_at',
         'photo',
         'password',
         'provider_id'
@@ -34,6 +40,7 @@ class User extends Authenticatable
     protected $hidden = [
         'password',
         'remember_token',
+        'mobile_verify_code',
     ];
 
     /**
@@ -43,7 +50,15 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'number_verified_at' => 'datetime',
+        'mobile_verify_code_sent_at' => 'datetime',
+        'mobile_last_attempt_date' => 'datetime'
     ];
+
+    public function routeNotificationForVonage($notification)
+    {
+        return $this->mobile_number;
+    }
 
     public function rSavedPosts()
     {
