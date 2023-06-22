@@ -5,6 +5,7 @@ namespace App\Http;
 use App\Http\Middleware\Admin;
 use App\Http\Middleware\Authenticate;
 use App\Http\Middleware\EncryptCookies;
+use App\Http\Middleware\EnsureMobileIsVerifiedMiddleware;
 use App\Http\Middleware\PreventRequestsDuringMaintenance;
 use App\Http\Middleware\RedirectIfAuthenticated;
 use App\Http\Middleware\TrimStrings;
@@ -86,5 +87,6 @@ class Kernel extends HttpKernel
         'throttle' => ThrottleRequests::class,
         'verified' => EnsureEmailIsVerified::class,
         'admin' => Admin::class,
+        'verify.mobile' => EnsureMobileIsVerifiedMiddleware::class,
     ];
 }

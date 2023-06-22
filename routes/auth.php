@@ -11,6 +11,7 @@ use App\Http\Controllers\Auth\NewPasswordController;
 use App\Http\Controllers\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyEmailController;
+use App\Http\Controllers\Auth\VerifyMobileController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/register', [RegisteredUserController::class, 'create'])
@@ -89,3 +90,12 @@ Route::post('/confirm-password', [ConfirmablePasswordController::class, 'store']
 Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])
     ->middleware('auth')
     ->name('logout');
+
+Route::middleware('auth')->group(function () {
+    Route::view('verify-mobile', 'auth.verify-mobile')
+        ->name('verification-mobile.notice');
+
+    Route::post('verify-mobile', [VerifyMobileController::class, '__invoke'])
+        ->middleware(['throttle:6,1'])
+        ->name('verification.verify-mobile');
+});
