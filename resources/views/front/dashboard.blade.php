@@ -95,7 +95,7 @@
                                                 <div class="contact-form">
                                                     <span class="wpcf7-form-control-wrap sub_title"><input type="text"
                                                                                                            name="phone"
-                                                                                                           value="{{ $userData->phone }}"
+                                                                                                           value="{{ $userData->mobile_number }}"
                                                                                                            size="40"
                                                                                                            class="wpcf7-form-control wpcf7-text"
                                                                                                            aria-invalid="false"></span>
