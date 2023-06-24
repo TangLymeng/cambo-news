@@ -12,9 +12,8 @@ class EnsureMobileIsVerifiedMiddleware
 {
     public function handle(Request $request, Closure $next, $redirectToRoute = null)
     {
-        if (! $request->user() ||
-            ($request->user() instanceof MustVerifyMobile &&
-                ! $request->user()->hasVerifiedMobile())) {
+        $user = $request->user();
+        if (empty($user->provider_id) && !$user->hasVerifiedMobile()) {
             return $request->expectsJson()
                 ? abort(403, 'Your mobile number is not verified.')
                 : Redirect::guest(URL::route($redirectToRoute ?: 'verification-mobile.notice'));

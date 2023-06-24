@@ -185,8 +185,8 @@
                     <div class="col-md-3">
                         <button type="submit" class="btn btn-primary">Search</button>
                     </div>
-                    </form>
                 </div>
+                </form>
             </div>
         </div>
     </div>

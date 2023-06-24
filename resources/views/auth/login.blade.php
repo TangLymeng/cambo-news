@@ -2,7 +2,7 @@
     <x-auth-card>
         <x-slot name="logo">
             <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
+                <img src="{{ asset('uploads/logo.png') }}" alt="" class="fill-current text-gray-500" style="width: 250px; height: 200px">
             </a>
         </x-slot>
 
@@ -15,11 +15,11 @@
         <form method="POST" action="{{ route('login') }}">
             @csrf
 
-            <!-- Email Address -->
+            <!-- Email Address/ Mobile Number -->
             <div>
-                <x-label for="email" :value="__('Email')" />
+                <x-label for="login" :value="__('Email/Mobile Number')" />
 
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
+                <x-input id="login" class="block mt-1 w-full" type="text" name="login" :value="old('login')" required autofocus />
             </div>
 
             <!-- Password -->
@@ -42,8 +42,9 @@
 
             <div class="flex items-center justify-end mt-4">
                 @if (Route::has('password.request'))
-                    <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
-                        {{ __('Forgot your password?') }}
+                    <p class="text-sm text-gray-600">Don't has Account? </p>
+                    <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('register') }}">
+                        {{ __('Register') }}
                     </a>
                 @endif
 

@@ -30,13 +30,12 @@ use App\Http\Controllers\Admin\AdminAdvertisementController;
 
 Route::middleware(['auth', 'verify.mobile'])->group(function() {
 
-    Route::get('/dashboard', [UserController::class, 'UserDashboard'])->name('dashboard');
-    Route::post('/user/profile/store', [UserController::class, 'UserProfileStore'])->name('user.profile.store');
-    Route::get('/user/logout', [UserController::class, 'UserLogout'])->name('user.logout');
-    Route::post('/posts/{post}/save', [SavePostController::class, 'save'])->name('posts.save');
-    Route::get('/posts/saved', [SavePostController::class, 'savedPosts'])->name('posts.saved');
-    Route::delete('/posts/{post}', [SavePostController::class, 'deleteSavedPost'])->name('delete_saved_post');
-
+        Route::get('/dashboard', [UserController::class, 'UserDashboard'])->name('dashboard');
+        Route::post('/user/profile/store', [UserController::class, 'UserProfileStore'])->name('user.profile.store');
+        Route::get('/user/logout', [UserController::class, 'UserLogout'])->name('user.logout');
+        Route::post('/posts/{post}/save', [SavePostController::class, 'save'])->name('posts.save');
+        Route::get('/posts/saved', [SavePostController::class, 'savedPosts'])->name('posts.saved');
+        Route::delete('/posts/{post}', [SavePostController::class, 'deleteSavedPost'])->name('delete_saved_post');
 
 }); // End User Middleware
 

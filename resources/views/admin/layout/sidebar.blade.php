@@ -15,7 +15,7 @@
 
             <li class="{{ Request::is('admin/setting') ? 'active' : '' }}"><a class="nav-link"
                                                                            href="{{ route('admin_setting') }}"><i
-                        class="fas fa-wrench fa-spin"></i> <span>Setting</span></a></li>
+                        class="fas fa-fire"></i> <span>Breaking News/News Ticker</span></a></li>
 
             <li class="nav-item dropdown {{ Request::is('admin/top-advertisement')||Request::is('admin/home-advertisement')||Request::is('admin/sidebar-advertisement') ? 'active' : ''  }}">
                 <a href="#" class="nav-link has-dropdown"><i
@@ -52,7 +52,7 @@
                         class="fas fa-comment fa-spin"></i> <span>Pending Comment</span></a></li>
             <li class="{{ Request::is('admin/approved/comment') ? 'active' : '' }}"><a class="nav-link"
                                                                                       href="{{ route('admin_comment_approved') }}"><i
-                        class="fas fa-comment fa-spin"></i> <span>Approved Comment</span></a></li>
+                        class="fas fa-comment"></i> <span>Approved Comment</span></a></li>
 
 {{--            <li class="nav-item dropdown active">--}}
 {{--                <a href="#" class="nav-link has-dropdown"><i class="fas fa-hand-point-right"></i><span>Dropdown Items</span></a>--}}

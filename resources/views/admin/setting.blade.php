@@ -16,9 +16,6 @@
                                         <a class="nav-link active" id="v-1-tab" data-toggle="pill" href="#v-1" role="tab" aria-controls="v-1" aria-selected="true">
                                             Home Page
                                         </a>
-                                        <a class="nav-link" id="v-2-tab" data-toggle="pill" href="#v-2" role="tab" aria-controls="v-2" aria-selected="false">
-                                            Text Item
-                                        </a>
                                     </div>
                                 </div>
                                 <div class="col-xl-10 col-lg-9 col-md-8 col-sm-12">
@@ -40,11 +37,6 @@
                                         </div>
 
                                         <div class="pt_0 tab-pane fade" id="v-2" role="tabpanel" aria-labelledby="v-2-tab">
-                                            <!-- Text Item Start -->
-                                            <div class="form-group mb-3">
-                                                <label>Text</label>
-                                                <input type="text" class="form-control" name="" value="123">
-                                            </div>
                                             <div class="form-group mb-3">
                                                 <label>Status</label>
                                                 <select name="" class="form-control">
