@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <meta name="description" content="">
-    <title>News Portal Website</title>
+    <title>Cambo News</title>
 
-    <link rel="icon" type="image/png" href="{{ asset('dist-front/uploads/favicon.png') }}">
+    <link rel="icon" type="image/png" href="{{ asset('uploads/logo.png') }}">
 
     <!-- All CSS -->
     @include('front.layout.styles')

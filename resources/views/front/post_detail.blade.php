@@ -12,7 +12,7 @@
                             <li class="breadcrumb-item"><a
                                     href="{{ route('category', $post_detail->sub_category_id) }}">{{ $post_detail->rSubCategory->sub_category_name }}</a>
                             </li>
-                            <li class="breadcrumb-item active" aria-current="page">{{ $post_detail->post_title }}</li>
+                            <li class="breadcrumb-item active" aria-current="page">{{  $post_detail->post_title }}</li>
                         </ol>
                     </nav>
                 </div>
