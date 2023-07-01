@@ -42,7 +42,7 @@
                                             <a href="{{ route('admin_comment_approve',$row->id) }}"
                                                class="btn btn-primary rounded-pill waves-effect waves-light">Approve</a>
                                             <a href="{{ route('admin_comment_reject',$row->id) }} "
-                                               class="btn btn-danger rounded-pill waves-effect waves-light">Reject</a>
+                                               class="btn btn-danger rounded-pill waves-effect waves-light" id="delete">Reject</a>
 
                                         </td>
                                     </tr>

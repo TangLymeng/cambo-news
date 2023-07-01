@@ -9,3 +9,5 @@
 <script src="{{ asset('dist-front/js/jquery.waypoints.min.js') }}"></script>
 <script src="{{ asset('dist-front/js/acmeticker.js') }}"></script>
 <script src="{{ asset('dist-front/js/iziToast.min.js') }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+

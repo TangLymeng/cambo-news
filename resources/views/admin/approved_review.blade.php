@@ -41,7 +41,7 @@
                                         <td>
                                             <a href="{{ route('admin_comment_delete',$row->id) }} "
                                                class="btn btn-primary rounded-pill waves-effect waves-light"
-                                               onClick="return confirm('Are you sure?');">Delete</a>
+                                               id="delete">Delete</a>
 
                                         </td>
                                     </tr>

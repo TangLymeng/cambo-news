@@ -1,0 +1,24 @@
+.swal-title {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.swal-text {
+    font-size: 14px;
+}
+
+.swal-confirm-button {
+    background-color: #ff3d00;
+    color: #fff;
+    font-size: 14px;
+    padding: 8px 16px;
+    border-radius: 4px;
+}
+
+.swal-cancel-button {
+    background-color: #bdbdbd;
+    color: #000;
+    font-size: 14px;
+    padding: 8px 16px;
+    border-radius: 4px;
+}

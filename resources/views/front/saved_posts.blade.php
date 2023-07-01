@@ -13,11 +13,11 @@
                                     <a href="{{ route('news_detail', $post->id) }}">
                                         <h6>{{ $post->post_title }}</h6>
                                     </a>
-                                    <form action="{{ route('delete_saved_post', $post->id) }}" method="POST">
+                                    <form action="{{ route('delete_saved_post', $post->id) }}" method="POST" id="delete-form">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit"
-                                                style="background: none; border: none; color: inherit; cursor: pointer; padding: 0; text-decoration: underline;" onClick="return confirm('Are you sure?');">
+                                                style="background: none; border: none; color: inherit; cursor: pointer; padding: 0; text-decoration: underline;" >
                                             <i class="fas fa-trash-alt"></i> Delete
                                         </button>
                                     </form>
@@ -39,4 +39,5 @@
                         </div>
             </div>
         </div>
+    </div>
 @endsection
