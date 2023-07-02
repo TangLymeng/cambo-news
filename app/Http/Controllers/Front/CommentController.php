@@ -3,11 +3,13 @@
 namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
+use App\Mail\Websiteemail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Models\Comment;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Mail;
 
 class CommentController extends Controller
 {
@@ -45,7 +47,23 @@ class CommentController extends Controller
     public function CommentApprove($id)
     {
 
-        Comment::where('id', $id)->update(['status' => 1]);
+        $comment = Comment::find($id);
+
+        if (!$comment) {
+            return redirect()->back()->with('error', 'Comment not found');
+        }
+
+        $comment->status = 1;
+        $comment->save();
+
+        // Retrieve user information
+        $user = $comment->ruser;
+        $email = $user->email;
+        $subject = 'Notification of your comment approval';
+        $message = 'Your comment has been approved by the admin and is now visible on the website';
+
+        Mail::to($email)->send(new Websiteemail($subject, $message));
+
         return redirect()->back()->with('success', 'Comment Approved Successfully');
     }// End Method
 
@@ -53,8 +71,17 @@ class CommentController extends Controller
     public function CommentUnApprove($id)
     {
 
-        Comment::where('id', $id)->delete();
-        return redirect()->back()->with('success', 'Comment UnApproved Successfully');
+        $comment = Comment::findOrFail($id);
+        $comment->delete();
+
+        // Send email to the user
+        $user = $comment->ruser;
+        $email = $user->email;
+        $subject = 'Notification of your comment approval';
+        $message = "Your comment has been decline.";
+
+        Mail::to($email)->send(new Websiteemail($subject, $message));
+        return redirect()->back()->with('success', 'Comment Decline Successfully');
     }// End Method
 
     // Method to retrieve all approved comments from the database and display them in the admin panel
