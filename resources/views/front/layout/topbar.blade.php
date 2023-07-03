@@ -13,18 +13,19 @@
                     <li class="menu"><a href="{{ route('about') }}">About</a></li>
                     <li class="menu"><a href="contact.html">Contact</a></li>
                     @auth
-                        <li class="menu"><a href="{{ route('dashboard') }}"><b> Profile </b></a> </li>
+                        <li class="menu"><a href="{{ route('dashboard') }}"><b> Profile </b></a></li>
                     @else
-                        <li class="menu"><a href="{{ route('login') }}"><b> Login </b></a> </li>
-                        <li class="menu"> <a href="{{ route('register') }}"> <b>Register</b> </a> </li>
+                        <li class="menu"><a href="{{ route('login') }}"><b> Login </b></a></li>
+                        <li class="menu"><a href="{{ route('register') }}"> <b>Register</b> </a></li>
                     @endauth
                     <li class="menu">
                         <div class="language-switch">
-                            <select name="">
-                                <option value="">English</option>
-                                <option value="">Hindi</option>
-                                <option value="">Arabic</option>
-                            </select>
+                            @foreach (config('app.available_locales') as $locale)
+                                <a href="{{ request()->url() }}?language={{ $locale }}"
+                                   class="@if (app()->getLocale() == $locale) border-indigo-400 @endif inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium leading-5 focus:outline-none transition duration-150 ease-in-out">
+                                    [{{ strtoupper($locale) }}]
+                                </a>
+                            @endforeach
                         </div>
                     </li>
                 </ul>

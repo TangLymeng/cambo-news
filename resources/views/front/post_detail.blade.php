@@ -5,14 +5,14 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h2>{{ $post_detail->post_title }}</h2>
+                    <h2>{{ $post_detail->{'post_title_'.app()->getLocale()} }}</h2>
                     <nav class="breadcrumb-container">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
                             <li class="breadcrumb-item"><a
                                     href="{{ route('category', $post_detail->sub_category_id) }}">{{ $post_detail->rSubCategory->sub_category_name }}</a>
                             </li>
-                            <li class="breadcrumb-item active" aria-current="page">{{  $post_detail->post_title }}</li>
+                            <li class="breadcrumb-item active" aria-current="page">{{ $post_detail->{'post_title_'.app()->getLocale()} }}</li>
                         </ol>
                     </nav>
                 </div>
@@ -64,7 +64,7 @@
                         </div>
                     </div>
                     <div class="main-text">
-                        {!! $post_detail->post_detail !!}
+                        {!! $post_detail->{'post_detail_'.app()->getLocale()} !!}
                     </div>
                     <div class="tag-section">
                         <h2>Tags</h2>

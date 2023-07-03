@@ -27,8 +27,12 @@ class AdminPostController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'post_title' => 'required',
-            'post_detail' => 'required',
+            'post_title_en' => 'required',
+            'post_detail_en' => 'required',
+            'post_title_kh' => 'required',
+            'post_detail_kh' => 'required',
+            'post_title_cn' => 'required',
+            'post_detail_cn' => 'required',
             'post_photo' => 'required|image|mimes:jpg,jpeg,png,gif'
         ]);
 
@@ -38,8 +42,12 @@ class AdminPostController extends Controller
 
         $post = new Post();
         $post->sub_category_id = request('sub_category_id');
-        $post->post_title = request('post_title');
-        $post->post_detail = request('post_detail');
+        $post->post_title_en = request('post_title_en');
+        $post->post_detail_en = request('post_detail_en');
+        $post->post_title_kh = request('post_title_kh');
+        $post->post_detail_kh = request('post_detail_kh');
+        $post->post_title_cn = request('post_title_cn');
+        $post->post_detail_cn = request('post_detail_cn');
         $post->post_photo = $final_name;
         $post->visitors = 1;
         $post->author_id = 0;
@@ -79,8 +87,12 @@ class AdminPostController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'post_title' => 'required',
-            'post_detail' => 'required',
+            'post_title_en' => 'required',
+            'post_detail_en' => 'required',
+            'post_title_kh' => 'required',
+            'post_detail_kh' => 'required',
+            'post_title_cn' => 'required',
+            'post_detail_cn' => 'required',
         ]);
 
         $post = Post::where('id', $id)->first();
@@ -100,8 +112,12 @@ class AdminPostController extends Controller
         }
 
         $post->sub_category_id = request('sub_category_id');
-        $post->post_title = request('post_title');
-        $post->post_detail = request('post_detail');
+        $post->post_title_en = request('post_title_en');
+        $post->post_detail_en = request('post_detail_en');
+        $post->post_title_kh = request('post_title_kh');
+        $post->post_detail_kh = request('post_detail_kh');
+        $post->post_title_cn = request('post_title_cn');
+        $post->post_detail_cn = request('post_detail_cn');
         $post->visitors = 1;
         $post->author_id = 0;
         $post->is_share = request('is_share');

@@ -37,7 +37,7 @@
                                         <div class="category">
                                             <span class="badge bg-success">{{ $sub_category_data->sub_category_name }}</span>
                                         </div>
-                                        <h3><a href="{{ route('news_detail',$item->id) }}">{!! $item->post_detail !!}</a></h3>
+                                        <h3><a href="{{ route('news_detail',$item->id) }}">{!! $item->{'post_detail_'.app()->getLocale()} !!}</a></h3>
                                         <div class="date-user">
                                             <div class="user">
                                                 {{-- if admin--}}

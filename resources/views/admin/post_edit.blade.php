@@ -16,13 +16,31 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="form-group mb-3">
-                                <label>Post Title *</label>
-                                <input type="text" class="form-control" name="post_title" value="{{ $post_data->post_title }}">
+                                <label>Post Title (EN) *</label>
+                                <input type="text" class="form-control" name="post_title_en" value="{{ $post_data->post_title_en }}">
                             </div>
                             <div class="form-group mb-3">
-                                <label>Post Detail *</label>
-                                <textarea name="post_detail" class="form-control snote" id="" cols="30"
-                                          rows="10">{{ $post_data->post_detail }}</textarea>
+                                <label>Post Detail (EN) *</label>
+                                <textarea name="post_detail_en" class="form-control snote" id="" cols="30"
+                                          rows="10">{{ $post_data->post_detail_en }}</textarea>
+                            </div>
+                            <div class="form-group mb-3">
+                                <label>Post Title (KH) *</label>
+                                <input type="text" class="form-control" name="post_title_kh" value="{{ $post_data->post_title_kh }}">
+                            </div>
+                            <div class="form-group mb-3">
+                                <label>Post Detail (KH) *</label>
+                                <textarea name="post_detail_kh" class="form-control snote" id="" cols="30"
+                                          rows="10">{{ $post_data->post_detail_kh }}</textarea>
+                            </div>
+                            <div class="form-group mb-3">
+                                <label>Post Title (CN) *</label>
+                                <input type="text" class="form-control" name="post_title_cn" value="{{ $post_data->post_title_cn }}">
+                            </div>
+                            <div class="form-group mb-3">
+                                <label>Post Detail (CN) *</label>
+                                <textarea name="post_detail_cn" class="form-control snote" id="" cols="30"
+                                          rows="10">{{ $post_data->post_detail_cn }}</textarea>
                             </div>
                             <div class="form-group mb-3">
                                 <label>Current Photo *</label>

@@ -56,7 +56,7 @@
                                 <div class="category">
                                     <span class="badge bg-success">{{ $item->rSubCategory->sub_category_name }}</span>
                                 </div>
-                                <h2><a href="{{ route('news_detail',$item->id) }}">{{ $item->post_title }}</a></h2>
+                                <h2><a href="{{ route('news_detail',$item->id) }}">{{ $item->{'post_title_'.app()->getLocale()} }}</a></h2>
                                 <div class="date-user">
                                     <div class="user">
                                             @if($item->author_id==0)
@@ -92,7 +92,7 @@
                                 <div class="category">
                                     <span class="badge bg-success">{{ $item->rSubCategory->sub_category_name }}</span>
                                 </div>
-                                <h2><a href="{{ route('news_detail',$item->id) }}">{{ $item->post_title }}</a></h2>
+                                <h2><a href="{{ route('news_detail',$item->id) }}">{{ $item->{'post_title_'.app()->getLocale()} }}</a></h2>
                                 <div class="date-user">
                                     <div class="user">
                                         <a href="">

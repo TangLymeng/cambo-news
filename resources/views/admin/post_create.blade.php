@@ -16,12 +16,31 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="form-group mb-3">
-                                <label>Post Title *</label>
-                                <input type="text" class="form-control" name="post_title" value="">
+                                <label>Post Title * (EN)</label>
+                                <input type="text" class="form-control" name="post_title_en" value="">
                             </div>
                             <div class="form-group mb-3">
-                                <label>Post Detail *</label>
-                                <textarea name="post_detail" class="form-control snote" id="" cols="30"
+                                <label>Post Detail * (EN)</label>
+                                <textarea name="post_detail_en" class="form-control snote" id="" cols="30"
+                                          rows="10"></textarea>
+                            </div>
+                            <div class="form-group mb-3">
+                                <label>Post Title * (KH)</label>
+                                <input type="text" class="form-control" name="post_title_kh" value="">
+                            </div>
+                            <div class="form-group mb-3">
+                                <label>Post Detail * (KH)</label>
+                                <textarea name="post_detail_kh" class="form-control snote" id="" cols="30"
+                                          rows="10"></textarea>
+                            </div>
+                            <div class="form-group mb-3">
+                                <label>Post Title (CN) *</label>
+                                <input type="text" class="form-control" name="post_title_cn"
+                                       value="">
+                            </div>
+                            <div class="form-group mb-3">
+                                <label>Post Detail (CN) *</label>
+                                <textarea name="post_detail_cn" class="form-control snote" id="" cols="30"
                                           rows="10"></textarea>
                             </div>
                             <div class="form-group mb-3">

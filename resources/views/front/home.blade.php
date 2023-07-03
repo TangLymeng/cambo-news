@@ -17,7 +17,7 @@
                                         @if($i>$setting_data->news_ticker_total)
                                             @break
                                         @endif
-                                        <li><a href="{{ route('news_detail',$item->id) }}">{{ $item->post_title }}</a>
+                                        <li><a href="{{ route('news_detail',$item->id) }}">{{ $item->{'post_title_'.app()->getLocale()} }}</a>
                                         </li>
                                     @endforeach
                                 </ul>
@@ -50,7 +50,7 @@
                                                     class="badge bg-success badge-sm">{{ $item->rSubCategory->sub_category_name }}</span>
                                             </div>
                                             <h2>
-                                                <a href="{{ route('news_detail',$item->id) }}">{{ $item->post_title }}</a>
+                                                <a href="{{ route('news_detail',$item->id) }}">{{ $item->{'post_title_'.app()->getLocale()} }} </a>
                                             </h2>
                                             <div class="date-user">
                                                 <div class="user">
@@ -100,7 +100,7 @@
                                             <span
                                                 class="badge bg-success badge-sm">{{ $item->rSubCategory->sub_category_name }}</span>
                                         </div>
-                                        <h2><a href="{{ route('news_detail',$item->id) }}">{{ $item->post_title }}</a>
+                                        <h2><a href="{{ route('news_detail',$item->id) }}">{{ $item->{'post_title_'.app()->getLocale()} }}</a>
                                         </h2>
                                         <div class="date-user">
                                             <div class="user">
@@ -231,7 +231,7 @@
                                                 <div class="category">
                                                     <span class="badge bg-success">{{ $item->sub_category_name }}</span>
                                                 </div>
-                                                <h3><a href="{{ route('news_detail',$single->id) }}">{{ $single->post_title }}</a></h3>
+                                                <h3><a href="{{ route('news_detail',$single->id) }}">{{ $single->{'post_title_'.app()->getLocale()} }}</a></h3>
                                                 <div class="date-user">
                                                     <div class="user">
                                                         {{-- if admin--}}
@@ -255,7 +255,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="post-short-text">
-                                                    {!! $single->post_detail !!}
+                                                    {!! $single->{'post_detail_'.app()->getLocale()} !!}
                                                 </div>
                                             </div>
                                         </div>
@@ -280,7 +280,7 @@
                                                     <div class="category">
                                                         <span class="badge bg-success">{{ $item->sub_category_name }}</span>
                                                     </div>
-                                                    <h2><a href="{{ route('news_detail',$single->id) }}">{{ $single->post_title }}</a></h2>
+                                                    <h2><a href="{{ route('news_detail',$single->id) }}">{{ $single->{'post_title_'.app()->getLocale()} }}</a></h2>
                                                     <div class="date-user">
                                                         <div class="user">
                                                             {{-- if admin--}}
