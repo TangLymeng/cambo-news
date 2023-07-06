@@ -15,8 +15,16 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="form-group mb-3">
-                                <label>Category Name *</label>
-                                <input type="text" class="form-control" name="category_name" value="{{ $categories->category_name }}">
+                                <label>Category Name (EN) *</label>
+                                <input type="text" class="form-control" name="category_name_en" value="{{ $categories->category_name_en }}">
+                            </div>
+                            <div class="form-group mb-3">
+                                <label>Category Name (KH) *</label>
+                                <input type="text" class="form-control" name="category_name_kh" value="{{ $categories->category_name_kh }}">
+                            </div>
+                            <div class="form-group mb-3">
+                                <label>Category Name (CN) *</label>
+                                <input type="text" class="form-control" name="category_name_cn" value="{{ $categories->category_name_cn }}">
                             </div>
                             <div class="form-group mb-3">
                                 <label>Show on menu?</label>

@@ -27,7 +27,7 @@
                                 @foreach($categories as $row)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $row->category_name }}</td>
+                                        <td>{{ $row->category_name_en }}</td>
                                         <td>{{ $row->show_on_menu }}</td>
                                         <td>{{ $row->category_order }}</td>
                                         <td class="pt_10 pb_10">

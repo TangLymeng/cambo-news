@@ -8,7 +8,7 @@
                     <h2>{{ $post_detail->{'post_title_'.app()->getLocale()} }}</h2>
                     <nav class="breadcrumb-container">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
+                            <li class="breadcrumb-item"><a href="{{ route('home') }}">{{__('HOME')}}</a></li>
                             <li class="breadcrumb-item"><a
                                     href="{{ route('category', $post_detail->sub_category_id) }}">{{ $post_detail->rSubCategory->sub_category_name }}</a>
                             </li>
@@ -67,7 +67,7 @@
                         {!! $post_detail->{'post_detail_'.app()->getLocale()} !!}
                     </div>
                     <div class="tag-section">
-                        <h2>Tags</h2>
+                        <h2>@lang('TAGS')</h2>
                         <div class="tag-section-content">
                             @foreach($tag_data as $item)
                                 <a href="{{ route('tag_posts_show',$item->tag_name) }}"><span
@@ -86,7 +86,7 @@
                             <div class="author2">
                                 <div class="author-content2">
                                     <h6 class="author-caption2">
-                                        <span> COMMENTS </span>
+                                        <span> @lang('COMMENT') </span>
                                     </h6>
                                     <div class="author-image2">
                                         <img alt=""
@@ -141,7 +141,7 @@
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="contact-title">
-                                            Comments *
+                                            @lang('COMMENT') *
                                         </div>
                                         <div class="contact-form">
                             <span class="wpcf7-form-control-wrap news_details">
@@ -149,7 +149,7 @@
                              <textarea name="comment" cols="20" rows="5"
                                        class="wpcf7-form-control wpcf7-textarea wpcf7-validates-as-required"
                                        aria-required="true"
-                                       aria-invalid="false" placeholder="Write your comment..."></textarea></span>
+                                       aria-invalid="false" placeholder="@lang('WRITE_YOUR_COMMENT')"></textarea></span>
                                         </div>
                                     </div>
                                 </div>
@@ -159,7 +159,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="contact-btn">
-                                        <input type="submit" value="Submit Comment"
+                                        <input type="submit" value="@lang('SUBMIT_COMMENT')"
                                                class="wpcf7-form-control has-spinner wpcf7-submit"><span
                                             class="wpcf7-spinner"></span>
                                     </div>
@@ -172,7 +172,7 @@
                     @endguest
                     <div class="related-news">
                         <div class="related-news-heading">
-                            <h2>Related News</h2>
+                            <h2>@lang('RELATED_NEWS')</h2>
                         </div>
                         <div class="related-post-carousel owl-carousel owl-theme">
                             @foreach($related_post_data as $item)

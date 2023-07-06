@@ -32,7 +32,7 @@ class AdminPostController extends Controller
             'post_title_kh' => 'required',
             'post_detail_kh' => 'required',
             'post_title_cn' => 'required',
-            'post_detail_cn' => 'required',
+            'post_detail_cn' => 'required|m',
             'post_photo' => 'required|image|mimes:jpg,jpeg,png,gif'
         ]);
 

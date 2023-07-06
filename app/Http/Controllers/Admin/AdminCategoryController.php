@@ -16,12 +16,16 @@ class AdminCategoryController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'category_name' => 'required',
+            'category_name_en' => 'required',
+            'category_name_kh' => 'required',
+            'category_name_cn' => 'required',
             'category_order' => 'required',
         ]);
         $categories = new Category();
 
-        $categories->category_name = request('category_name');
+        $categories->category_name_en = request('category_name_en');
+        $categories->category_name_kh = request('category_name_kh');
+        $categories->category_name_cn = request('category_name_cn');
         $categories->show_on_menu = request('show_on_menu');
         $categories->category_order = request('category_order');
 
@@ -44,7 +48,9 @@ class AdminCategoryController extends Controller
     {
         $categories = Category::where('id', $id)->first();
 
-        $categories->category_name = $request->category_name;
+        $categories->category_name_en = request('category_name_en');
+        $categories->category_name_kh = request('category_name_kh');
+        $categories->category_name_cn = request('category_name_cn');
         $categories->show_on_menu = $request->show_on_menu;
         $categories->category_order = $request->category_order;
 

@@ -54,7 +54,7 @@
                                 <select name="sub_category_id" class="form-control select2">
                                     @foreach($sub_categories as $item)
                                         <option value="{{ $item->id }}">{{ $item->sub_category_name }}
-                                            ({{ $item->rCategory->category_name }})
+                                            ({{ $item->rCategory->category_name_en }})
                                         </option>
                                     @endforeach
                                 </select>

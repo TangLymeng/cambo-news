@@ -84,7 +84,11 @@ return [
 
     'locale' => 'en',
 
-    'available_locales' => ['en', 'kh', 'cn'],
+    'available_locales' => [
+        'en' => 'English',
+        'kh' => 'Khmer',
+        'cn' => 'Chinese',
+    ],
 
     /*
     |--------------------------------------------------------------------------

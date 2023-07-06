@@ -44,21 +44,19 @@
         <div class="row">
             <div class="col-md-3">
                 <div class="item">
-                    <h2 class="heading">About Us</h2>
-                    <p>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                    </p>
+                    <h2 class="heading">{{ __('ABOUT_US') }}</h2>
+                    <p>{{ __('FOOTER_COL_1_TEXT') }}</p>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="item">
-                    <h2 class="heading">Useful Links</h2>
+                    <h2 class="heading">{{ __('USEFUL_LINKS') }}</h2>
                     <ul class="useful-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="terms.html">Terms and Conditions</a></li>
-                        <li><a href="privacy.html">Privacy Policy</a></li>
-                        <li><a href="disclaimer.html">Disclaimer</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="index.html">{{ __('USEFUL_LINKS') }}</a></li>
+                        <li><a href="terms.html">{{ __('TERM_AND_CONDITIONS') }}</a></li>
+                        <li><a href="privacy.html">{{ __('PRIVACY_POLICY') }}</a></li>
+                        <li><a href="disclaimer.html">{{ __('DISCLAIMER') }}</a></li>
+                        <li><a href="contact.html">{{ __('CONTACT') }}</a></li>
                     </ul>
                 </div>
             </div>
@@ -66,13 +64,13 @@
 
             <div class="col-md-3">
                 <div class="item">
-                    <h2 class="heading">Contact</h2>
+                    <h2 class="heading">{{ __('CONTACT') }}</h2>
                     <div class="list-item">
                         <div class="left">
                             <i class="fas fa-map-marker-alt"></i>
                         </div>
                         <div class="right">
-                            In your heart
+                            {{ __('FOOTER_ADDRESS') }}
                         </div>
                     </div>
                     <div class="list-item">
@@ -80,7 +78,7 @@
                             <i class="far fa-envelope"></i>
                         </div>
                         <div class="right">
-                            cambo-news@cam.asia
+                            {{ __('FOOTER_EMAIL') }}
                         </div>
                     </div>
                     <div class="list-item">
@@ -88,7 +86,7 @@
                             <i class="fas fa-phone-alt"></i>
                         </div>
                         <div class="right">
-                            +855 123456789
+                            {{ __('FOOTER_PHONE') }}
                         </div>
                     </div>
                     <ul class="social">
@@ -103,16 +101,16 @@
 
             <div class="col-md-3">
                 <div class="item">
-                    <h2 class="heading">Newsletter</h2>
+                    <h2 class="heading">{{__('FOOTER_COL_4_HEADING')}}</h2>
                     <p>
-                        In order to get the latest news and other great items, please subscribe us here:
+                        {{__('NEWSLETTER_TEXT')}}
                     </p>
                     <form action="" method="post">
                         <div class="form-group">
                             <input type="text" name="" class="form-control">
                         </div>
                         <div class="form-group">
-                            <input type="submit" class="btn btn-primary" value="Subscribe Now">
+                            <input type="submit" class="btn btn-primary" value="{{__('SUBSCRIBE_NOW')}}">
                         </div>
                     </form>
                 </div>
@@ -123,7 +121,7 @@
 </div>
 
 <div class="copyright">
-    Copyright 2023, chessman. All Rights Reserved.
+    {{ __('COPYRIGHT_TEXT') }}
 </div>
 
 <div class="scroll-top">

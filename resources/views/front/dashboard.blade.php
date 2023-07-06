@@ -25,8 +25,8 @@
 
 
                             <ul>
-                                <li><a href="{{ route('posts.saved') }}"> <b>🟠 Read Later List </b> </a></li>
-                                <li> <a href="{{ route('user.logout') }}"> <b>🟠 Logout </b> </a> </li>
+                                <li><a href="{{ route('posts.saved') }}"> <b>🟠 @lang('READ_LATER_LIST') </b> </a></li>
+                                <li> <a href="{{ route('user.logout') }}"> <b>🟠 @lang('LOGOUT') </b> </a> </li>
                             </ul>
 
                         </div>
@@ -43,7 +43,7 @@
                     <div class="col-lg-12 col-md-12">
                         <div class="contact-wrpp">
                             <h4 class="contactAddess-title text-center">
-                                User Account </h4>
+                                @lang('USER_ACCOUNT') </h4>
                             <div role="form" class="wpcf7" id="wpcf7-f437-o1" lang="en-US" dir="ltr">
                                 <div class="screen-reader-response"><p role="status" aria-live="polite"
                                                                        aria-atomic="true"></p>
@@ -61,7 +61,7 @@
 
                                             <div class="col-md-12 col-sm-12">
                                                 <div class="contact-title ">
-                                                    Name *
+                                                    @lang('NAME') *
                                                 </div>
                                                 <div class="contact-form">
                                                     <span class="wpcf7-form-control-wrap sub_title"><input type="text"
@@ -76,7 +76,7 @@
 
                                             <div class="col-md-12 col-sm-12">
                                                 <div class="contact-title ">
-                                                    Email *
+                                                    @lang('EMAIL') *
                                                 </div>
                                                 <div class="contact-form">
                                                     <span class="wpcf7-form-control-wrap sub_title"><input type="text"
@@ -90,7 +90,7 @@
 
                                             <div class="col-md-12 col-sm-12">
                                                 <div class="contact-title ">
-                                                    Phone *
+                                                    @lang('PHONE') *
                                                 </div>
                                                 <div class="contact-form">
                                                     <span class="wpcf7-form-control-wrap sub_title"><input type="text"
@@ -105,7 +105,7 @@
 
                                             <div class="col-md-12 col-sm-12">
                                                 <div class="contact-title ">
-                                                    Photo *
+                                                    @lang('PHOTO') *
                                                 </div>
                                                 <div class="contact-form">
                                                     <span class="wpcf7-form-control-wrap sub_title"><input type="file"
@@ -123,7 +123,7 @@
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <div class="contact-btn">
-                                                    <input type="submit" value="Updates"
+                                                    <input type="submit" value="@lang('UPDATE')"
                                                            class="wpcf7-form-control has-spinner wpcf7-submit"><span
                                                         class="wpcf7-spinner"></span>
                                                 </div>
