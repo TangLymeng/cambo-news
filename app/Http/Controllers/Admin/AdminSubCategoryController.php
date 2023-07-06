@@ -22,12 +22,16 @@ class AdminSubCategoryController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'sub_category_name' => 'required',
+            'sub_category_name_en' => 'required',
+            'sub_category_name_kh' => 'required',
+            'sub_category_name_cn' => 'required',
             'sub_category_order' => 'required',
         ]);
         $sub_categories = new SubCategory();
 
-        $sub_categories->sub_category_name = request('sub_category_name');
+        $sub_categories->sub_category_name_en = request('sub_category_name_en');
+        $sub_categories->sub_category_name_kh = request('sub_category_name_kh');
+        $sub_categories->sub_category_name_cn = request('sub_category_name_cn');
         $sub_categories->show_on_menu = request('show_on_menu');
         $sub_categories->show_on_home = request('show_on_home');
         $sub_categories->sub_category_order = request('sub_category_order');
@@ -46,12 +50,16 @@ class AdminSubCategoryController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'sub_category_name' => 'required',
+            'sub_category_name_en' => 'required',
+            'sub_category_name_kh' => 'required',
+            'sub_category_name_cn' => 'required',
             'sub_category_order' => 'required',
         ]);
         $sub_categories = SubCategory::where('id', $id)->first();
 
-        $sub_categories->sub_category_name = request('sub_category_name');
+        $sub_categories->sub_category_name_en = request('sub_category_name_en');
+        $sub_categories->sub_category_name_kh = request('sub_category_name_kh');
+        $sub_categories->sub_category_name_cn = request('sub_category_name_cn');
         $sub_categories->show_on_menu = request('show_on_menu');
         $sub_categories->show_on_home = request('show_on_home');
         $sub_categories->sub_category_order = request('sub_category_order');

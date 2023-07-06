@@ -29,9 +29,9 @@
                                 @foreach($sub_categories as $row)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $row->sub_category_name }}</td>
+                                        <td>{{ $row->sub_category_name_en }}</td>
                                         <td>
-                                            {{ $row->rCategory->category_name }}
+                                            {{ $row->rCategory->category_name_en }}
                                         </td>
                                         <td>{{ $row->show_on_menu }}</td>
                                         <td>{{ $row->show_on_home }}</td>

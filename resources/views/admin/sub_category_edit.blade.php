@@ -15,8 +15,16 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="form-group mb-3">
-                                <label>SubCategory Name *</label>
-                                <input type="text" class="form-control" name="sub_category_name" value="{{ $sub_category_single->sub_category_name }}">
+                                <label>SubCategory Name (EN) *</label>
+                                <input type="text" class="form-control" name="sub_category_name_en" value="{{ $sub_category_single->sub_category_name_en }}">
+                            </div>
+                            <div class="form-group mb-3">
+                                <label>SubCategory Name (KH) *</label>
+                                <input type="text" class="form-control" name="sub_category_name_kh" value="{{ $sub_category_single->sub_category_name_kh }}">
+                            </div>
+                            <div class="form-group mb-3">
+                                <label>SubCategory Name (CN) *</label>
+                                <input type="text" class="form-control" name="sub_category_name_cn" value="{{ $sub_category_single->sub_category_name_cn }}">
                             </div>
                             <div class="form-group mb-3">
                                 <label>Show on menu?</label>
@@ -40,7 +48,7 @@
                                 <label>Select Category</label>
                                 <select name="category_id" class="form-control" id="">
                                     @foreach($categories as $row)
-                                        <option value="{{ $row->id }}" @if($sub_category_single->category_id == $row->id) selected @endif>{{ $row->category_name }}</option>
+                                        <option value="{{ $row->id }}" @if($sub_category_single->category_id == $row->id) selected @endif>{{ $row->category_name_en }}</option>
                                     @endforeach
                                 </select>
                             </div>

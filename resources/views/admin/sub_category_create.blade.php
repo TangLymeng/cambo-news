@@ -15,8 +15,16 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="form-group mb-3">
-                                <label>SubCategory Name *</label>
-                                <input type="text" class="form-control" name="sub_category_name" value="">
+                                <label>SubCategory Name (EN) *</label>
+                                <input type="text" class="form-control" name="sub_category_name_en" value="">
+                            </div>
+                            <div class="form-group mb-3">
+                                <label>SubCategory Name (KH) *</label>
+                                <input type="text" class="form-control" name="sub_category_name_kh" value="">
+                            </div>
+                            <div class="form-group mb-3">
+                                <label>SubCategory Name (CN) *</label>
+                                <input type="text" class="form-control" name="sub_category_name_cn" value="">
                             </div>
                             <div class="form-group mb-3">
                                 <label>Show on menu?</label>

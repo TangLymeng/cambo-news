@@ -19,7 +19,7 @@
                                     </a>
                                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                         @foreach($item->rSubCategory as $item2)
-                                            <li><a class="dropdown-item" href="{{ route('category',$item2->id) }}">{{ $item2->sub_category_name }}</a></li>
+                                            <li><a class="dropdown-item" href="{{ route('category',$item2->id) }}">{{ $item2->{'sub_category_name_'.app()->getLocale()} }}</a></li>
                                         @endforeach
                                     </ul>
                                 </li>
