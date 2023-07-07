@@ -11,14 +11,18 @@ class TagController extends Controller
 {
     public function show($tag_name)
     {
-        $all_data = Tag::where('tag_name', $tag_name)->get();
-        $all_post_ids = [];
-        foreach ($all_data as $row) {
-            $all_post_ids[] = $row->post_id;
-        }
+        $all_data = Tag::where(function ($query) use ($tag_name) {
+            $query->where('tag_name_en', $tag_name)
+                ->orWhere('tag_name_kh', $tag_name)
+                ->orWhere('tag_name_cn', $tag_name);
+        })->get();
 
-        $all_posts = Post::orderBy('id', 'desc')->get();
+        $all_post_ids = $all_data->pluck('post_id')->toArray();
 
-        return view('front.tag', compact('all_post_ids','all_posts', 'tag_name'));
+        $all_posts = Post::whereIn('id', $all_post_ids)->orderBy('id', 'desc')->get();
+
+        return view('front.tag', compact('all_posts', 'all_post_ids', 'tag_name'));
     }
+
+
 }
