@@ -35,9 +35,9 @@
                                                 <img src="{{ asset('uploads/'.$item->post_photo) }}" alt="">
                                             </div>
                                             <div class="category">
-                                                <span class="badge bg-success">{{ $item->rSubCategory->sub_category_name }}</span>
+                                                <span class="badge bg-success">{{ $item->rSubCategory->{'sub_category_name_'.app()->getLocale()} }}</span>
                                             </div>
-                                            <h3><a href="{{ route('news_detail',$item->id) }}">{!! $item->{'post_detail_'.app()->getLocale()} !!}</a></h3>
+                                            <h3><a href="{{ route('news_detail',$item->id) }}">{!! $item->{'post_title_'.app()->getLocale()} !!}</a></h3>
                                             <div class="date-user">
                                                 <div class="user">
                                                     {{-- if admin--}}

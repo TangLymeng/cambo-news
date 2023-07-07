@@ -47,7 +47,7 @@
                                         <div class="text-inner">
                                             <div class="category">
                                                 <span
-                                                    class="badge bg-success badge-sm">{{ $item->rSubCategory->sub_category_name }}</span>
+                                                    class="badge bg-success badge-sm">{{ $item->rSubCategory->{'sub_category_name_'.app()->getLocale()} }}</span>
                                             </div>
                                             <h2>
                                                 <a href="{{ route('news_detail',$item->id) }}">{{ $item->{'post_title_'.app()->getLocale()} }} </a>
@@ -98,7 +98,7 @@
                                     <div class="text-inner">
                                         <div class="category">
                                             <span
-                                                class="badge bg-success badge-sm">{{ $item->rSubCategory->sub_category_name }}</span>
+                                                class="badge bg-success badge-sm">{{ $item->rSubCategory->{'sub_category_name_'.app()->getLocale()} }}</span>
                                         </div>
                                         <h2><a href="{{ route('news_detail',$item->id) }}">{{ $item->{'post_title_'.app()->getLocale()} }}</a>
                                         </h2>
@@ -208,7 +208,7 @@
                             <div class="news-total-item">
                                 <div class="row">
                                     <div class="col-lg-6 col-md-12">
-                                        <h2>{{ $item->sub_category_name }}</h2>
+                                        <h2>{{ $item->{'sub_category_name_'.app()->getLocale()} }}</h2>
                                     </div>
                                     <div class="col-lg-6 col-md-12 see-all">
                                         <a href="{{ route('category',$item->id) }}" class="btn btn-primary btn-sm">@lang('SEE_ALL_NEWS')</a>
@@ -229,7 +229,7 @@
                                                     <img src="{{ asset('uploads/'.$single->post_photo) }}" alt="">
                                                 </div>
                                                 <div class="category">
-                                                    <span class="badge bg-success">{{ $item->sub_category_name }}</span>
+                                                    <span class="badge bg-success">{{ $item->{'sub_category_name_'.app()->getLocale()} }}</span>
                                                 </div>
                                                 <h3><a href="{{ route('news_detail',$single->id) }}">{{ $single->{'post_title_'.app()->getLocale()} }}</a></h3>
                                                 <div class="date-user">
@@ -278,7 +278,7 @@
                                                 </div>
                                                 <div class="right">
                                                     <div class="category">
-                                                        <span class="badge bg-success">{{ $item->sub_category_name }}</span>
+                                                        <span class="badge bg-success">{{ $item->{'sub_category_name_'.app()->getLocale()} }}</span>
                                                     </div>
                                                     <h2><a href="{{ route('news_detail',$single->id) }}">{{ $single->{'post_title_'.app()->getLocale()} }}</a></h2>
                                                     <div class="date-user">

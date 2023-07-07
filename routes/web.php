@@ -109,6 +109,3 @@ Route::get('/admin/comment/approve/{id}',[CommentController::class, 'CommentAppr
 Route::get('/admin/comment/reject/{id}',[CommentController::class, 'CommentUnApprove'])->name('admin_comment_reject')->middleware('admin:admin');
 Route::get('/admin/approved/comment',[CommentController::class, 'ApprovedComment'])->name('admin_comment_approved')->middleware('admin:admin');
 Route::get('/admin/comment/delete/{id}',[CommentController::class, 'CommentDelete'])->name('admin_comment_delete')->middleware('admin:admin');
-
-
-

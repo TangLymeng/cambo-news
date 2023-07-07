@@ -27,7 +27,7 @@ class HomeController extends Controller
         $sub_category_data = SubCategory::where('category_id',$id)->get();
         $response = "<option value=''>Select SubCategory</option>";
         foreach ($sub_category_data as $item) {
-            $response .= "<option value='" . $item->id . "'>" . $item->sub_category_name . "</option>";
+            $response .= "<option value='" . $item->id . "'>" . $item->{'sub_category_name_'.app()->getLocale()} . "</option>";
         }
 
         return response()->json(['sub_category_data'=>$response]);
@@ -40,7 +40,7 @@ class HomeController extends Controller
 
         $post_data = Post::with('rSubCategory')->orderBy('id','desc');
         if($request->text_item != null){
-            $post_data = $post_data->where('post_title_en','like','%'.$request->text_item.'%');
+            $post_data = $post_data->where('post_title_'.app()->getLocale(),'like','%'.$request->text_item.'%');
         }
         if($request->sub_category != null){
             $post_data = $post_data->where('sub_category_id',$request->sub_category);
