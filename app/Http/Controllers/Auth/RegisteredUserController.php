@@ -36,13 +36,37 @@ class RegisteredUserController extends Controller
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'mobile_number' => ['required'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
+            'photo' => asset('uploads/no_profile.jpg'),
+            'password' => Hash::make($request->password),
+        ]);
+
+        event(new Registered($user));
+
+        Auth::login($user);
+
+        return redirect(RouteServiceProvider::HOME);
+    }
+
+    public function createViaMobile()
+    {
+        return view('auth.register-mobile');
+    }
+
+    public function storeViaMobile(Request $request){
+        $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'mobile_number' => ['required', 'string', 'max:255', 'unique:users'],
+            'password' => ['required', 'confirmed', Rules\Password::defaults()],
+        ]);
+
+        $user = User::create([
+            'name' => $request->name,
             'mobile_number' => $request->mobile_number,
             'photo' => asset('uploads/no_profile.jpg'),
             'password' => Hash::make($request->password),

@@ -62,7 +62,9 @@ class CommentController extends Controller
         $subject = 'Notification of your comment approval';
         $message = 'Your comment has been approved by the admin and is now visible on the website';
 
-        Mail::to($email)->send(new Websiteemail($subject, $message));
+        if (!empty($email)){
+            Mail::to($email)->send(new Websiteemail($subject, $message));
+        }
 
         return redirect()->back()->with('success', 'Comment Approved Successfully');
     }// End Method
@@ -80,7 +82,10 @@ class CommentController extends Controller
         $subject = 'Notification of your comment approval';
         $message = "Your comment has been decline.";
 
-        Mail::to($email)->send(new Websiteemail($subject, $message));
+        if (!empty($email)){
+            Mail::to($email)->send(new Websiteemail($subject, $message));
+        }
+
         return redirect()->back()->with('success', 'Comment Decline Successfully');
     }// End Method
 

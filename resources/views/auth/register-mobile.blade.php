@@ -9,7 +9,7 @@
         <!-- Validation Errors -->
         <x-auth-validation-errors class="mb-4" :errors="$errors" />
 
-        <form method="POST" action="{{ route('register') }}">
+        <form method="POST" action="{{ route('register.mobile') }}">
             @csrf
 
             <!-- Name -->
@@ -19,19 +19,19 @@
                 <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
             </div>
 
-            <!-- Email Address -->
-            <div class="mt-4">
-                <x-label for="email" :value="__('Email')" />
-
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
-            </div>
-
-{{--            <!-- Mobile Number -->--}}
+{{--            <!-- Email Address -->--}}
 {{--            <div class="mt-4">--}}
-{{--                <x-label for="mobile_number" :value="__('Mobile Number')" />--}}
+{{--                <x-label for="email" :value="__('Email')" />--}}
 
-{{--                <x-input id="mobile_number" class="block mt-1 w-full" type="tel" name="mobile_number" :value="old('mobile_number')" required />--}}
+{{--                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />--}}
 {{--            </div>--}}
+
+            <!-- Mobile Number -->
+            <div class="mt-4">
+                <x-label for="mobile_number" :value="__('Mobile Number')" />
+
+                <x-input id="mobile_number" class="block mt-1 w-full" type="tel" name="mobile_number" :value="old('mobile_number')" required />
+            </div>
 
             <!-- Password -->
             <div class="mt-4">
@@ -53,8 +53,8 @@
             </div>
 
             <div class="flex items-center justify-end mt-4">
-                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('register.mobile') }}">
-                    {{ __('Register with mobile number?') }}
+                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('register') }}">
+                    {{ __('Register with mobile email?') }}
                 </a>
 
                 <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">

@@ -22,7 +22,7 @@ class UserController extends Controller
         $data = User::find($id);
         $data->name = $request->name;
         $data->email = $request->email;
-        $data->phone = $request->phone;
+        $data->mobile_number = $request->mobile_number;
 
         if ($request->file('photo')) {
             $request->validate([

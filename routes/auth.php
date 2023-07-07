@@ -21,6 +21,13 @@ Route::get('/register', [RegisteredUserController::class, 'create'])
 Route::post('/register', [RegisteredUserController::class, 'store'])
     ->middleware('guest');
 
+Route::get('/register-mobile', [RegisteredUserController::class, 'createViaMobile'])
+    ->middleware('guest')
+    ->name('register.mobile');
+
+Route::post('/register-mobile', [RegisteredUserController::class, 'storeViaMobile'])
+    ->middleware('guest');
+
 Route::get('/login', [AuthenticatedSessionController::class, 'create'])
     ->middleware('guest')
     ->name('login');
