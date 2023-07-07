@@ -59,20 +59,26 @@ class AdminPostController extends Controller
         $ai_id = $post->id; // Retrieve the auto-incremented post_id
 
         // Prevent duplicate tags from being saved
-        if ($request->tags != '') {
-            $tags_array_new = [];
-            $tags_array = explode(',', request('tags'));
-            for ($i = 0; $i < count($tags_array); $i++) {
-                $tags_array_new[] = trim($tags_array[$i]);
-            }
-            $tags_array_new = array_values(array_unique($tags_array_new));
-            for ($i = 0; $i < count($tags_array_new); $i++) {
+        if ($request->tags_en != '' && $request->tags_kh != '' && $request->tags_cn != '') {
+            $tags_array_en = explode(',', $request->tags_en);
+            $tags_array_kh = explode(',', $request->tags_kh);
+            $tags_array_cn = explode(',', $request->tags_cn);
+
+            // Assuming all three arrays have the same number of elements
+            $totalTags = count($tags_array_en);
+
+            for ($i = 0; $i < $totalTags; $i++) {
                 $tag = new Tag();
                 $tag->post_id = $ai_id;
-                $tag->tag_name = trim($tags_array_new[$i]);
+
+                $tag->tag_name_en = trim($tags_array_en[$i]);
+                $tag->tag_name_kh = trim($tags_array_kh[$i]);
+                $tag->tag_name_cn = trim($tags_array_cn[$i]);
+
                 $tag->save();
             }
         }
+
 
         return redirect()->route('admin_post_show')->with('success', 'Post Created Successfully');
     }
@@ -95,22 +101,9 @@ class AdminPostController extends Controller
             'post_detail_cn' => 'required',
         ]);
 
-        $post = Post::where('id', $id)->first();
+        $post = Post::findOrFail($id);
 
-        if ($request->hasFile('post_photo')) {
-            $request->validate([
-                'post_photo' => 'image|mimes:jpg,jpeg,png,gif'
-            ]);
-
-            unlink(public_path('uploads/'.$post->post_photo));
-
-            $ext = $request->file('post_photo')->extension();
-            $final_name = 'post_photo_'.uniqid().'.'.$ext;
-            $request->file('post_photo')->move(public_path('uploads/'), $final_name);
-
-            $post->post_photo = $final_name;
-        }
-
+        // Update post fields
         $post->sub_category_id = request('sub_category_id');
         $post->post_title_en = request('post_title_en');
         $post->post_detail_en = request('post_detail_en');
@@ -124,24 +117,30 @@ class AdminPostController extends Controller
         $post->is_comment = request('is_comment');
         $post->update();
 
-        if ($request->tags != '') {
-            $tags_array = explode(',', request('tags'));
-            for ($i = 0; $i < count($tags_array); $i++) {
+        // Clear existing tags for the post
+        Tag::where('post_id', $id)->delete();
 
-                // prevent duplicate entry
-                $total = Tag::where('post_id', $id)->where('tag_name', trim($tags_array[$i]))->count();
+        // Store tags in multiple languages
+        $tags_en = explode(',', $request->tags_en);
+        $tags_kh = explode(',', $request->tags_kh);
+        $tags_cn = explode(',', $request->tags_cn);
 
-                if(!$total){
-                    $tag = new Tag();
-                    $tag->post_id = $id;
-                    $tag->tag_name = trim($tags_array[$i]);
-                    $tag->save();
-                }
-            }
+        $maxTags = max(count($tags_en), count($tags_kh), count($tags_cn));
+
+        for ($i = 0; $i < $maxTags; $i++) {
+            $tag = new Tag();
+            $tag->post_id = $id;
+
+            $tag->tag_name_en = isset($tags_en[$i]) ? trim($tags_en[$i]) : '';
+            $tag->tag_name_kh = isset($tags_kh[$i]) ? trim($tags_kh[$i]) : '';
+            $tag->tag_name_cn = isset($tags_cn[$i]) ? trim($tags_cn[$i]) : '';
+
+            $tag->save();
         }
 
         return redirect()->route('admin_post_show')->with('success', 'Post Updated Successfully');
     }
+
     public function destroy_tag($id, $id1)
     {
         $tag = Tag::where('id', $id)->first();

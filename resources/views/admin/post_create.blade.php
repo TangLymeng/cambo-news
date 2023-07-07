@@ -73,9 +73,18 @@
                                     <option value="0">No</option>
                                 </select>
                             </div>
+                            <h4>Please sure that all 3 tags field has the same num of element</h4>
                             <div class="form-group mb-3">
-                                <label>Tags (Please separate each tag by comma symbol)</label>
-                                <input type="text" class="form-control" name="tags" value="">
+                                <label>Tags in English (Please separate each tag by comma symbol)</label>
+                                <input type="text" class="form-control" name="tags_en" value="">
+                            </div>
+                            <div class="form-group mb-3">
+                                <label>Tags in Khmer (Please separate each tag by comma symbol)</label>
+                                <input type="text" class="form-control" name="tags_kh" value="">
+                            </div>
+                            <div class="form-group mb-3">
+                                <label>Tags in Chinese (Please separate each tag by comma symbol)</label>
+                                <input type="text" class="form-control" name="tags_cn" value="">
                             </div>
                         </div>
                     </div>

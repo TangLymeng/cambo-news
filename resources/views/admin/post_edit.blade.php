@@ -81,7 +81,7 @@
                                 <table class="table table-bordered">
                                     @foreach($existing_tags as $item)
                                         <tr>
-                                            <td>{{ $item->tag_name }}</td>
+                                            <td>{{ $item->tag_name_en }}</td>
                                             <td>
                                                 <a href="{{ route('admin_post_tag_delete', [$item->id,$post_data->id]) }}" onClick="return confirm('Are you sure?');">Delete</a>
                                             </td>
@@ -90,9 +90,18 @@
                                 </table>
                             </div>
                             <div class="form-group mb-3">
-                                <label>Tags (Please separate each tag by comma symbol)</label>
-                                <input type="text" class="form-control" name="tags" value="">
+                                <label>Tags in english (Please separate each tag by comma symbol)</label>
+                                <input type="text" class="form-control" name="tags_en" value="">
                             </div>
+                            <div class="form-group mb-3">
+                                <label>Tags in khmer (Please separate each tag by comma symbol)</label>
+                                <input type="text" class="form-control" name="tags_kh" value="">
+                            </div>
+                            <div class="form-group mb-3">
+                                <label>Tags in chinese (Please separate each tag by comma symbol)</label>
+                                <input type="text" class="form-control" name="tags_cn" value="">
+                            </div>
+
                         </div>
                     </div>
                 </div>

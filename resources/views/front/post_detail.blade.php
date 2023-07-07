@@ -70,10 +70,22 @@
                         <h2>@lang('TAGS')</h2>
                         <div class="tag-section-content">
                             @foreach($tag_data as $item)
-                                <a href="{{ route('tag_posts_show',$item->tag_name) }}"><span
-                                        class="badge bg-success">{{ $item->tag_name }}</span></a>
+                                @php
+                                    $tag_name = '';
+                                    if(App::getLocale() === 'en') {
+                                        $tag_name = $item->tag_name_en;
+                                    } elseif(App::getLocale() === 'kh') {
+                                        $tag_name = $item->tag_name_kh;
+                                    } elseif(App::getLocale() === 'cn') {
+                                        $tag_name = $item->tag_name_cn;
+                                    }
+                                @endphp
+                                <a href="{{ route('tag_posts_show', $tag_name) }}">
+                                    <span class="badge bg-success">{{ $tag_name }}</span>
+                                </a>
                             @endforeach
                         </div>
+
                     </div>
                     @php
                         $review = App\Models\Comment::where('news_id',$post_detail->id)->latest()->limit(5)->get();

@@ -18,17 +18,19 @@
         </div>
         <div class="tag">
             @php
-                $all_tags = App\Models\Tag::select('tag_name')->distinct()->get();
-//                foreach($all_tags as $row){
-//                    echo $row->tag_name . ', ';
-//                }
-             @endphp
+                $all_tags = App\Models\Tag::select('tag_name_en', 'tag_name_kh', 'tag_name_cn')->distinct()->get();
+                $currentLanguage = App::getLocale(); // Assuming you're using Laravel localization
+            @endphp
+
             @foreach($all_tags as $item)
                 <div class="tag-item">
-                    <a href="{{ route('tag_posts_show',$item->tag_name) }}"><span class="badge bg-secondary">{{ $item->tag_name }}</span></a>
+                    <a href="{{ route('tag_posts_show', $item['tag_name_' . $currentLanguage]) }}">
+                        <span class="badge bg-secondary">{{ $item['tag_name_' . $currentLanguage] }}</span>
+                    </a>
                 </div>
             @endforeach
         </div>
+
     </div>
 
     <div class="widget">
