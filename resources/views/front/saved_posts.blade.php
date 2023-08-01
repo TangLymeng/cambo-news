@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h1>Saved Posts</h1>
+                <h1>@lang('SAVED_POSTS')</h1>
                 <hr>
                 @if(count($saved_posts) > 0)
                     @foreach($saved_posts as $post)
@@ -11,7 +11,7 @@
                             <div class="card-header">
                                 <div style="display: flex; justify-content: space-between; align-items: center;">
                                     <a href="{{ route('news_detail', $post->id) }}">
-                                        <h6>{{ $post->post_title }}</h6>
+                                        <h6>{{ $post->{'post_title_'.app()->getLocale()} }}</h6>
                                     </a>
                                     <form action="{{ route('delete_saved_post', $post->id) }}" method="POST" id="delete-form">
                                         @csrf
@@ -39,5 +39,4 @@
                         </div>
             </div>
         </div>
-    </div>
 @endsection

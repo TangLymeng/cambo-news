@@ -33,19 +33,19 @@ return [
     'google' => [
         'client_id' => env('GOOGLE_CLIENT_ID'),
         'client_secret' => env('GOOGLE_CLIENT_SECRET'),
-        'redirect' => 'http://localhost:8000/auth/google/callback'
+        'redirect' => 'https://mengs.me/auth/google/callback'
     ],
 
     'facebook' => [
         'client_id' => env('FACEBOOK_CLIENT_ID'),
         'client_secret' => env('FACEBOOK_CLIENT_SECRET'),
-        'redirect' => 'http://localhost:8000/auth/facebook/callback'
+        'redirect' => 'https://mengs.me/auth/facebook/callback'
     ],
 
     'github' => [
         'client_id' => env('GITHUB_CLIENT_ID'),
         'client_secret' => env('GITHUB_CLIENT_SECRET'),
-        'redirect' => 'http://localhost:8000/auth/github/callback'
+        'redirect' => 'https://mengs.me/auth/github/callback'
     ],
 
 ];

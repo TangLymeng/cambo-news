@@ -15,7 +15,7 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="form-group mb-3">
-                                <label>Category Name (EN) *</label>
+                                 <label>Category Name (EN) *</label>
                                 <input type="text" class="form-control" name="category_name_en" value="{{ $categories->category_name_en }}">
                             </div>
                             <div class="form-group mb-3">

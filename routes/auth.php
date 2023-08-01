@@ -20,7 +20,7 @@ Route::get('/register', [RegisteredUserController::class, 'create'])
 
 Route::post('/register', [RegisteredUserController::class, 'store'])
     ->middleware('guest');
-
+    
 Route::get('/register-mobile', [RegisteredUserController::class, 'createViaMobile'])
     ->middleware('guest')
     ->name('register.mobile');

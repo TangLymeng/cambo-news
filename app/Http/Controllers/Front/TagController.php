@@ -23,6 +23,4 @@ class TagController extends Controller
 
         return view('front.tag', compact('all_posts', 'all_post_ids', 'tag_name'));
     }
-
-
 }

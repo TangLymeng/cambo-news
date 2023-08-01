@@ -20,7 +20,7 @@
                                 <input type="text" class="form-control" name="post_title_en" value="">
                             </div>
                             <div class="form-group mb-3">
-                                <label>Post Detail * (EN)</label>
+                                 <label>Post Detail * (EN)</label>
                                 <textarea name="post_detail_en" class="form-control snote" id="" cols="30"
                                           rows="10"></textarea>
                             </div>
@@ -53,7 +53,7 @@
                                 <label>Select Category</label>
                                 <select name="sub_category_id" class="form-control select2">
                                     @foreach($sub_categories as $item)
-                                        <option value="{{ $item->id }}">{{ $item->sub_category_name_en }}
+                                         <option value="{{ $item->id }}">{{ $item->sub_category_name_en }}
                                             ({{ $item->rCategory->category_name_en }})
                                         </option>
                                     @endforeach
@@ -85,7 +85,6 @@
                             <div class="form-group mb-3">
                                 <label>Tags in Chinese (Please separate each tag by comma symbol)</label>
                                 <input type="text" class="form-control" name="tags_cn" value="">
-                            </div>
                         </div>
                     </div>
                 </div>

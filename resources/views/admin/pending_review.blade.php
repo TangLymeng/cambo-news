@@ -27,7 +27,7 @@
                                         <td>{{ $loop->iteration }}</td>
                                         <td><img src="{{ asset('uploads/'.$row['rnews']['post_photo']) }} "
                                                  style="width:200px"></td>
-                                        <td>{{ $row['rnews']['post_title'] }}</td>
+                                        <td>{{ $row['rnews']['post_title_en'] }}</td>
                                         <td>{{ $row['ruser']['name'] }}</td>
                                         <td>{{ Str::limit($row->comment, 25) }}</td>
                                         <td>

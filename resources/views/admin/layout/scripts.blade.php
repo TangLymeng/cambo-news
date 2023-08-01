@@ -1,4 +1,4 @@
-    <script src="{{ asset('dist/js/jquery-3.6.0.min.js') }}"></script>
+<script src="{{ asset('dist/js/jquery-3.6.0.min.js') }}"></script>
     <script src="{{ asset('dist/js/popper.min.js') }}"></script>
     <script src="{{ asset('dist/js/tooltip.js') }}"></script>
     <script src="{{ asset('dist/js/bootstrap.min.js') }}"></script>

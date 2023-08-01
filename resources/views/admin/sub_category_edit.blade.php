@@ -15,7 +15,7 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="form-group mb-3">
-                                <label>SubCategory Name (EN) *</label>
+                                 <label>SubCategory Name (EN) *</label>
                                 <input type="text" class="form-control" name="sub_category_name_en" value="{{ $sub_category_single->sub_category_name_en }}">
                             </div>
                             <div class="form-group mb-3">

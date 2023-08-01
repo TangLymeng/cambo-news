@@ -4,7 +4,7 @@
             <div class="col-md-4 d-flex align-items-center">
                 <div class="logo">
                     <a href="{{ route('home') }}">
-                        <img src="{{ asset('uploads/logo.png') }}" alt="">
+                        <img src="{{ asset('uploads/logo.png') }}" alt="" style="width: 180px;">
                     </a>
                 </div>
             </div>

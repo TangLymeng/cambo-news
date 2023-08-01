@@ -5,12 +5,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h2>{{ $sub_category_data->sub_category_name }}</h2>
+                    <h2>{{ $sub_category_data->{'sub_category_name_'.app()->getLocale()} }}</h2>
                     <nav class="breadcrumb-container">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
+                            <li class="breadcrumb-item"><a href="{{ route('home') }}">@lang('HOME')</a></li>
                             <li class="breadcrumb-item active"
-                                aria-current="page">{{ $sub_category_data->sub_category_name }}</li>
+                                aria-current="page">{{ $sub_category_data->{'sub_category_name_'.app()->getLocale()} }}</li>
                         </ol>
                     </nav>
                 </div>
@@ -35,7 +35,7 @@
                                             <img src="{{ asset('uploads/'.$item->post_photo) }}" alt="">
                                         </div>
                                         <div class="category">
-                                            <span class="badge bg-success">{{ $sub_category_data->sub_category_name }}</span>
+                                            <span class="badge bg-success">{{ $sub_category_data->{'sub_category_name_'.app()->getLocale()} }}</span>
                                         </div>
                                         <h3><a href="{{ route('news_detail',$item->id) }}">{!! $item->{'post_detail_'.app()->getLocale()} !!}</a></h3>
                                         <div class="date-user">

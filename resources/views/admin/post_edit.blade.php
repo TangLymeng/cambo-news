@@ -58,7 +58,7 @@
                                 <label>Select Category *</label>
                                 <select name="sub_category_id" class="form-control select2">
                                     @foreach($sub_categories as $item)
-                                            <option value="{{ $item->id }}" @if($item->id == $post_data->sub_category_id) selected @endif>{{ $item->sub_category_name }} ({{ $item->rCategory->category_name }})</option>
+                                            <option value="{{ $item->id }}" @if($item->id == $post_data->sub_category_id) selected @endif>{{ $item->sub_category_name_en }} ({{ $item->rCategory->category_name_en }})</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -101,7 +101,6 @@
                                 <label>Tags in chinese (Please separate each tag by comma symbol)</label>
                                 <input type="text" class="form-control" name="tags_cn" value="">
                             </div>
-
                         </div>
                     </div>
                 </div>

@@ -44,8 +44,7 @@
                                         </td>
                                         <td class="pt_10 pb_10">
                                             <a href="{{ route('admin_post_edit', $row->id) }}" class="btn btn-primary">Edit</a>
-                                            <a href="{{ route('admin_post_delete', $row->id) }}" class="btn btn-danger"
-                                               id="delete">Delete</a>
+                                            <a href="{{ route('admin_post_delete', $row->id) }}" class="btn btn-danger" id="delete">Delete</a>
                                         </td>
                                     </tr>
                                 @endforeach

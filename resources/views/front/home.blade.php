@@ -159,14 +159,14 @@
                 <div class="row">
                     <div class="col-md-3">
                         <div class="form-group">
-                            <input type="text" name="text_item" class="form-control" placeholder="Title or Description">
+                            <input type="text" name="text_item" class="form-control" placeholder="@lang('TITLE_DESCRIPTION')">
                         </div>
                     </div>
 
                     <div class="col-md-3">
                         <div class="form-group">
                             <select name="category" id="category" class="form-select">
-                                <option value="">Select Category</option>
+                                <option value="">@lang('SELECT_CATEGORY')</option>
                                 @foreach($category_data as $item)
                                     <option value="{{ $item->id }}">{{ $item->sub_category_name }}
                                         {{ $item->{'category_name_'.app()->getLocale()} }}
@@ -178,7 +178,7 @@
                     <div class="col-md-3">
                         <div class="form-group">
                             <select name="sub_category" id="sub_category" class="form-select">
-                                <option value="">Select SubCategory</option>
+                                <option value="">@lang('SELECT_SUBCATEGORY')</option>
                             </select>
                         </div>
                     </div>

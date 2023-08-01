@@ -10,7 +10,7 @@
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="{{ route('home') }}">{{__('HOME')}}</a></li>
                             <li class="breadcrumb-item"><a
-                                    href="{{ route('category', $post_detail->sub_category_id) }}">{{ $post_detail->rSubCategory->sub_category_name }}</a>
+                                    href="{{ route('category', $post_detail->sub_category_id) }}">{{ $post_detail->rSubCategory->{'sub_category_name_'.app()->getLocale()} }}</a>
                             </li>
                             <li class="breadcrumb-item active" aria-current="page">{{ $post_detail->{'post_title_'.app()->getLocale()} }}</li>
                         </ol>
@@ -34,7 +34,7 @@
                         </div>
                         <div class="item">
                             <b><i class="fas fa-edit"></i></b>
-                            <a href="{{ route('category',$post_detail->sub_category_id) }}">{{ $post_detail->rSubCategory->sub_category_name }}</a>
+                            <a href="{{ route('category',$post_detail->sub_category_id) }}">{{ $post_detail->rSubCategory->{'sub_category_name_'.app()->getLocale()} }}</a>
                         </div>
                         <div class="item">
                             <b><i class="fas fa-clock"></i></b>
@@ -85,7 +85,6 @@
                                 </a>
                             @endforeach
                         </div>
-
                     </div>
                     @php
                         $review = App\Models\Comment::where('news_id',$post_detail->id)->latest()->limit(5)->get();
@@ -120,10 +119,8 @@
                     <hr>
                     @guest
 
-                        <p><b> Please log in to leave a comment. If you don't have an account yet, you can create one to
-                                join the conversation! <a href="{{ route('login') }}"> Login
-                                    Page</a> | <a href="{{ route('register') }}"> Register
-                                    Page</a> </b></p>
+                        <p><b> @lang('CHECK_AUTH_TO_COMMENT_MESSSAGE') <a href="{{ route('login') }}"> @lang('LOGIN')</a> | <a href="{{ route('register') }}"> @lang('REGISTER')
+                                    </a> </b></p>
 
                     @else
 
@@ -194,10 +191,10 @@
                                     </div>
                                     <div class="category">
                                                 <span
-                                                    class="badge bg-success">{{ $post_detail->rSubCategory->sub_category_name }}</span>
+                                                    class="badge bg-success">{{ $post_detail->rSubCategory->{'sub_category_name_'.app()->getLocale()} }}</span>
                                     </div>
                                     <h3>
-                                        <a href="{{ route('news_detail',$item->id) }}">{!! $item->post_detail !!} </a>
+                                        <a href="{{ route('news_detail',$item->id) }}">{!! $item->{'post_title_'.app()->getLocale()}  !!} </a>
                                     </h3>
                                     <div class="date-user">
                                         <div class="user">

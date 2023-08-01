@@ -4,5 +4,19 @@
     "The :attribute must contain at least one symbol.": "The :attribute must contain at least one symbol.",
     "The :attribute must contain at least one uppercase and one lowercase letter.": "The :attribute must contain at least one uppercase and one lowercase letter.",
     "The given :attribute has appeared in a data leak. Please choose a different :attribute.": "The given :attribute has appeared in a data leak. Please choose a different :attribute.",
-    "FOOTER_EMAIL": "cambo-news@asia.cam"
+    "ABOUT_US": "About Us",
+    "FOOTER_COL_1_TEXT": "Welcome to Cambo News, your reliable source for the latest and most accurate news. We are dedicated to delivering timely updates on local and international events, providing comprehensive coverage of important issues in the community and society. Along with our team of experienced journalists and editors, we strive to keep you informed about the most significant headlines. We offer a wide range of articles covering various topics, including politics, business, technology, culture, sports, and much more.",
+    "FOOTER_COL_4_HEADING": "Newsletter",
+    "FOOTER_ADDRESS": "In Your Heart",
+    "FOOTER_EMAIL": "cambo-news@asian.cam",
+    "FOOTER_PHONE": "+85517513366",
+    "NEWSLETTER_TEXT": "In order to get lastest please consider click subscribe",
+    "COPYRIGHT_TEXT": "Copyright 2023, chessman. All rights reserved.",
+    "ABOUT_FIRST_PARAGRAPH": "Welcome to Cambo News, your reliable source for the latest and most accurate news. We are dedicated to delivering timely updates on local and international events, providing comprehensive coverage of important issues in the community and society. Along with our team of experienced journalists and editors, we strive to keep you informed about the most significant headlines. We offer a wide range of articles covering various topics, including politics, business, technology, culture, sports, and much more.",
+    "ABOUT_SECOND_PARAGRAPH": "We are committed to providing the highest quality content to our readers. Our team of journalists and editors work tirelessly to ensure that every article is accurate, impartial, and timely. We strive to provide you with a comprehensive overview of the latest news from around the world. Whether you are looking for up-to-date information or in-depth analysis, we have been here to help.",
+    "ABOUT_THIRD_PARAGRAPH": "We are always looking for ways to improve our website and make it easier to use. If you have any suggestions or suggestions, please feel free to contact us. We want to hear from you!",
+    "ABOUT_FOURTH_PARAGRAPH": "Thanks for following Cambo News! We hope you enjoy reading our article as we enjoy writing it!",
+    "CHECK_AUTH_TO_COMMENT_MESSSAGE": "Please log in to leave a comment. If you don't have an account yet, you can create one to join the conversation!",
+    "LOGIN": "login",
+    "REGISTER": "register"
 }
