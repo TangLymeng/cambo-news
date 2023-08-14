@@ -77,6 +77,20 @@
                                             @endphp
                                             {{ $updated_date }}
                                         </a>
+                                    </div>                                                        
+                                    <div class="ms-3">
+                                        @if (Auth::check())
+                                            <div class="breadcrumb-save">
+                                                <form action="{{ route('posts.save', $item->id) }}" method="POST">
+                                                    @csrf
+                                                    <button type="submit"
+                                                    style="  background: none; border: none; color: inherit; cursor: pointer; padding: 0; text-decoration: underline;">
+                                                    <i class="fas fa-bookmark"></i>
+                                                     Save
+                                                    </button>
+                                                </form>
+                                            </div>
+                                        @endif
                                     </div>
                                 </div>
                             </div>
@@ -115,6 +129,20 @@
                                             @endphp
                                             {{ $updated_date }}
                                         </a>
+                                    </div>
+                                    <div class="ms-3">
+                                        @if (Auth::check())
+                                            <div class="breadcrumb-save">
+                                                <form action="{{ route('posts.save', $item->id) }}" method="POST">
+                                                    @csrf
+                                                    <button type="submit"
+                                                    style="  background: none; border: none; color: inherit; cursor: pointer; padding: 0; text-decoration: underline;">
+                                                    <i class="fas fa-bookmark"></i>
+                                                     Save
+                                                    </button>
+                                                </form>
+                                            </div>
+                                        @endif
                                     </div>
                                 </div>
                             </div>
