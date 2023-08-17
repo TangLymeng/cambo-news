@@ -46,7 +46,7 @@
                                                     class="badge bg-success">{{ $item->rSubCategory->sub_category_name }}</span>
                                             </div>
                                             <h3>
-                                                <a href="{{ route('news_detail',$item->id) }}">{{ $item->{'post_title_'.app()->getLocale()} }}</a>
+                                                <a href="{{ route('news_detail',['id' => $item->id, 'language' => app()->getLocale()]) }}">{{ $item->{'post_title_'.app()->getLocale()} }}</a>
                                             </h3>
                                             <div class="date-user">
                                                 <div class="user">

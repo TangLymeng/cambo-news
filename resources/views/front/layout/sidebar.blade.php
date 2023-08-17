@@ -6,7 +6,7 @@
                 @if($row->sidebar_ad_url == '')
                     <img src="{{ asset('uploads/'.$row->sidebar_ad) }}" alt="">
                 @else
-                    <a href="{{ $row->sidebar_ad_url }}"><img src="{{ asset('uploads/'.$row->sidebar_ad) }}" alt=""></a>
+                    <a href="{{ $row->sidebar_ad_url }}" target="_blank"><img src="{{ asset('uploads/'.$row->sidebar_ad) }}" alt=""></a>
                 @endif
             </div>
         @endforeach
@@ -19,16 +19,17 @@
         <div class="tag">
             @php
                 $all_tags = App\Models\Tag::select('tag_name_en', 'tag_name_kh', 'tag_name_cn')->distinct()->get();
-                $currentLanguage = App::getLocale(); // Assuming you're using Laravel localization
+                $currentLanguage = App::getLocale(); 
             @endphp
 
             @foreach($all_tags as $item)
                 <div class="tag-item">
-                    <a href="{{ route('tag_posts_show', $item['tag_name_' . $currentLanguage]) }}">
+                    <a href="{{ route('tag_posts_show', ['tag_name' => $item['tag_name_' . $currentLanguage], 'language' => app()->getLocale()]) }}">
                         <span class="badge bg-secondary">{{ $item['tag_name_' . $currentLanguage] }}</span>
                     </a>
                 </div>
             @endforeach
+
         </div>
 
     </div>
@@ -58,7 +59,7 @@
                                 <div class="category">
                                     <span class="badge bg-success">{{ $item->rSubCategory->sub_category_name }}</span>
                                 </div>
-                                <h2><a href="{{ route('news_detail',$item->id) }}">{{ $item->{'post_title_'.app()->getLocale()} }}</a></h2>
+                                <h2><a href="{{ route('news_detail',['id' => $item->id, 'language' => app()->getLocale()]) }}">{{ $item->{'post_title_'.app()->getLocale()} }}</a></h2>
                                 <div class="date-user">
                                     <div class="user">
                                             @if($item->author_id==0)
@@ -108,7 +109,7 @@
                                 <div class="category">
                                     <span class="badge bg-success">{{ $item->rSubCategory->sub_category_name }}</span>
                                 </div>
-                                <h2><a href="{{ route('news_detail',$item->id) }}">{{ $item->{'post_title_'.app()->getLocale()} }}</a></h2>
+                                <h2><a href="{{ route('news_detail',['id' => $item->id, 'language' => app()->getLocale()]) }}">{{ $item->{'post_title_'.app()->getLocale()} }}</a></h2>
                                 <div class="date-user">
                                     <div class="user">
                                         <a href="">

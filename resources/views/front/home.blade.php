@@ -17,8 +17,12 @@
                                         @if($i>$setting_data->news_ticker_total)
                                             @break
                                         @endif
-                                        <li><a href="{{ route('news_detail',$item->id) }}">{{ $item->{'post_title_'.app()->getLocale()} }}</a>
+                                        <li>
+                                            <a href="{{ route('news_detail', ['id' => $item->id, 'language' => app()->getLocale()]) }}">
+                                                {{ $item->{'post_title_'.app()->getLocale()} }}
+                                            </a>
                                         </li>
+
                                     @endforeach
                                 </ul>
                             </div>
@@ -50,7 +54,7 @@
                                                     class="badge bg-success badge-sm">{{ $item->rSubCategory->{'sub_category_name_'.app()->getLocale()} }}</span>
                                             </div>
                                             <h2>
-                                                <a href="{{ route('news_detail',$item->id) }}">{{ $item->{'post_title_'.app()->getLocale()} }} </a>
+                                                <a href="{{ route('news_detail', ['id' => $item->id, 'language' => app()->getLocale()]) }}">{{ $item->{'post_title_'.app()->getLocale()} }} </a>
                                             </h2>
                                             <div class="date-user">
                                                 <div class="user">
@@ -114,7 +118,7 @@
                                             <span
                                                 class="badge bg-success badge-sm">{{ $item->rSubCategory->{'sub_category_name_'.app()->getLocale()} }}</span>
                                         </div>
-                                        <h2><a href="{{ route('news_detail',$item->id) }}">{{ $item->{'post_title_'.app()->getLocale()} }}</a>
+                                        <h2><a href="{{ route('news_detail', ['id' => $item->id, 'language' => app()->getLocale()]) }}">{{ $item->{'post_title_'.app()->getLocale()} }}</a>
                                         </h2>
                                         <div class="date-user">
                                             <div class="user">
@@ -169,7 +173,7 @@
                         @if($home_ad_data->above_search_ad_url == '')
                             <img src="{{ asset('uploads/'.$home_ad_data->above_search_ad) }}" alt="">
                         @else
-                            <a href="{{ $home_ad_data->above_search_ad_url }}"><img
+                            <a href="{{ $home_ad_data->above_search_ad_url }}" target="_blank"><img
                                     src="{{ asset('uploads/'.$home_ad_data->above_search_ad) }}" alt=""></a>
                         @endif
 
@@ -239,7 +243,7 @@
                                         <h2>{{ $item->{'sub_category_name_'.app()->getLocale()} }}</h2>
                                     </div>
                                     <div class="col-lg-6 col-md-12 see-all">
-                                        <a href="{{ route('category',$item->id) }}" class="btn btn-primary btn-sm">@lang('SEE_ALL_NEWS')</a>
+                                        <a href="{{ route('category', ['id' => $item->id, 'language' => app()->getLocale()]) }}" class="btn btn-primary btn-sm">@lang('SEE_ALL_NEWS')</a>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="bar"></div>
@@ -259,7 +263,7 @@
                                                 <div class="category">
                                                     <span class="badge bg-success">{{ $item->{'sub_category_name_'.app()->getLocale()} }}</span>
                                                 </div>
-                                                <h3><a href="{{ route('news_detail',$single->id) }}">{{ $single->{'post_title_'.app()->getLocale()} }}</a></h3>
+                                                <h3><a href="{{ route('news_detail', ['id' => $single->id, 'language' => app()->getLocale()]) }}">{{ $single->{'post_title_'.app()->getLocale()} }}</a></h3>
                                                 <div class="date-user">
                                                     <div class="user">
                                                         {{-- if admin--}}
@@ -282,19 +286,19 @@
                                                         </p>
                                                     </div>
                                                     <div class="ms-3">
-                                                        @if (Auth::check())
-                                                            <div class="breadcrumb-save">
-                                                                <form action="{{ route('posts.save', $single->id) }}" method="POST">
-                                                                    @csrf
-                                                                    <button type="submit"
-                                                                            style="  background: none; border: none; color: inherit; cursor: pointer; padding: 0; text-decoration: underline;">
-                                                                            <i class="fas fa-bookmark"></i>
-                                                                        Save
-                                                                    </button>
-                                                                </form>
-                                                            </div>
+                                                         @if (Auth::check())
+                                                        <div class="breadcrumb-save">
+                                                            <form action="{{ route('posts.save', $single->id) }}" method="POST">
+                                                                @csrf
+                                                                <button type="submit"
+                                                                        style="  background: none; border: none; color: inherit; cursor: pointer; padding: 0; text-decoration: underline;">
+                                                                        <i class="fas fa-bookmark"></i>
+                                                                    Save
+                                                                </button>
+                                                            </form>
+                                                        </div>
                                                         @endif
-                                                     </div>
+                                                    </div>
                                                 </div>
                                                 <div class="post-short-text">
                                                     {!! $single->{'post_detail_'.app()->getLocale()} !!}
@@ -322,7 +326,7 @@
                                                     <div class="category">
                                                         <span class="badge bg-success">{{ $item->{'sub_category_name_'.app()->getLocale()} }}</span>
                                                     </div>
-                                                    <h2><a href="{{ route('news_detail',$single->id) }}">{{ $single->{'post_title_'.app()->getLocale()} }}</a></h2>
+                                                    <h2><a href="{{ route('news_detail', ['id' => $single->id, 'language' => app()->getLocale()]) }}">{{ $single->{'post_title_'.app()->getLocale()} }}</a></h2>
                                                     <div class="date-user">
                                                         <div class="user">
                                                             {{-- if admin--}}
@@ -346,16 +350,16 @@
                                                         </div>
                                                         <div class="ms-3">
                                                             @if (Auth::check())
-                                                                <div class="breadcrumb-save">
-                                                                    <form action="{{ route('posts.save', $single->id) }}" method="POST">
-                                                                        @csrf
-                                                                        <button type="submit"
-                                                                                style="  background: none; border: none; color: inherit; cursor: pointer; padding: 0; text-decoration: underline;">
-                                                                                <i class="fas fa-bookmark"></i>
-                                                                            Save
-                                                                        </button>
-                                                                    </form>
-                                                                </div>
+                                                            <div class="breadcrumb-save">
+                                                                <form action="{{ route('posts.save', $single->id) }}" method="POST">
+                                                                    @csrf
+                                                                    <button type="submit"
+                                                                            style="  background: none; border: none; color: inherit; cursor: pointer; padding: 0; text-decoration: underline;">
+                                                                            <i class="fas fa-bookmark"></i>
+                                                                        Save
+                                                                    </button>
+                                                                </form>
+                                                            </div>
                                                             @endif
                                                         </div>
                                                     </div>
@@ -391,7 +395,7 @@
                         @if($home_ad_data->above_footer_ad_url == '')
                             <img src="{{ asset('uploads/'.$home_ad_data->above_footer_ad) }}" alt="">
                         @else
-                            <a href="{{ $home_ad_data->above_footer_ad_url }}"><img
+                            <a href="{{ $home_ad_data->above_footer_ad_url }}" target="_blank"><img
                                     src="{{ asset('uploads/'.$home_ad_data->above_footer_ad) }}" alt=""></a>
                         @endif
 
